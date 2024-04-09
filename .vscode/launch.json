@@ -6,7 +6,7 @@
     "configurations": [
         {
             "cwd": "${workspaceFolder}",
-            "executable": "./embOSTest.elf",
+            "executable": "./freeRTOSTest.elf",
             "name": "Debug with ST-Link",
             "request": "launch",
             "type": "cortex-debug",
