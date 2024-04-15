@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "cmsis_os.h": "c",
+        "main.h": "c",
+        "stm32f3xx_hal.h": "c",
+        "threads.h": "c",
+        "frame_controller.h": "c"
+    },
+    "cortex-debug.variableUseNaturalFormat": true
+}
