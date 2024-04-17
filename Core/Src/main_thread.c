@@ -34,6 +34,15 @@ void mainThread(void const *argument)
             case TASK_SWITCH:
                 // Open new tasks and get this one on hold so it will be
                 {
+                    float value = 0.00234121;
+                    uint8_t my_tab[4];
+                    // Pakowanie floatów
+                    uint8_t *ptr = (uint8_t *)&value;
+                    for (int i = 0; i < 4; i++)
+                    {
+                        my_tab[i] = *(ptr + i);
+                    }
+                    CodeFrame(buffer, TASK_SWITCH, 4, my_tab);
                     HAL_UART_Transmit(&huart2, buffer, 10, 100);
                     uint8_t times_task1[10];
                     uint8_t times_task2[10];

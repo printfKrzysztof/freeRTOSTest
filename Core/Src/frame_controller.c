@@ -90,7 +90,7 @@ int CodeFrame(uint8_t *frame, uint8_t command, uint8_t arg_count, uint8_t *args)
         frame[3 + i] = args[i];
     }
     uint16_t crc = crc16(frame, 7);
-    frame[7] = (uint8_t)(crc << 8);
+    frame[7] = (uint8_t)(crc >> 8);
     frame[8] = (uint8_t)(crc & 0xFF);
     return 0;
 }
