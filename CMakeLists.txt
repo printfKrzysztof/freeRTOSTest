@@ -45,9 +45,11 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined library search paths
 )
 
+file(GLOB_RECURSE TEST_THREADS_SOURCES "Core/Src/test_threads/*.c")
+
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
-    Core/Src/main_thread.c
+    ${TEST_THREADS_SOURCES}
     Core/Src/frame_controller.c
 )
 

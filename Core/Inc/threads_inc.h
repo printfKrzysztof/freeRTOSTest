@@ -8,6 +8,12 @@
  * @copyright Copyright (c) 2024
  *
  */
-#include "cmsis_os.h"
 
-void mainThread(void const *argument);
+#ifndef THREADS_INC_H_
+#define THREADS_INC_H_
+#include "cmsis_os.h"
+void mainTaskThread(void const *argument);
+void task1Thread(void const *argument);
+void task2Thread(void const *argument);
+
+#endif // THREADS_INC_H_

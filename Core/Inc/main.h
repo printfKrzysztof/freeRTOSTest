@@ -30,6 +30,9 @@ extern "C"
 #include "stm32f3xx_hal.h"
 
     extern UART_HandleTypeDef huart2;
+    extern TIM_HandleTypeDef htim2;
+    extern uint32_t values1[10];
+    extern uint32_t values2[10];
     void Error_Handler(void);
 
 #define B1_Pin GPIO_PIN_13

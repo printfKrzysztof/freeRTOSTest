@@ -10,7 +10,6 @@
             "name": "Debug with ST-Link",
             "request": "launch",
             "type": "cortex-debug",
-            "runToEntryPoint": "main",
             "showDevDebugOutput": "both",
             "servertype": "stlink",
             "interface": "swd",

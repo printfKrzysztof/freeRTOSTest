@@ -4,7 +4,12 @@
         "main.h": "c",
         "stm32f3xx_hal.h": "c",
         "threads.h": "c",
-        "frame_controller.h": "c"
+        "frame_controller.h": "c",
+        "type_traits": "c",
+        "typeinfo": "c",
+        "features.h": "c",
+        "time.h": "c",
+        "threads_inc.h": "c"
     },
     "cortex-debug.variableUseNaturalFormat": true
 }
