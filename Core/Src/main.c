@@ -12,11 +12,12 @@
 #include "cmsis_os.h"
 #include "threads_inc.h"
 
-// Task definitions
-
-uint32_t values1[10];
-uint32_t values2[10];
+// Externs
+osSemaphoreId semaphoreHandle;
+uint32_t values1[15];
+uint32_t values2[15];
 osThreadId defaultTaskHandle;
+osMessageQId queueHandle;
 TIM_HandleTypeDef htim2;
 UART_HandleTypeDef huart2;
 
@@ -44,6 +45,7 @@ int main(void)
   defaultTaskHandle = osThreadCreate(osThread(MainTaskThread), NULL);
   osKernelStart();
 
+  // Some hard fault shit
   while (1)
   {
   }

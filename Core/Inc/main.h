@@ -31,8 +31,8 @@ extern "C"
 
     extern UART_HandleTypeDef huart2;
     extern TIM_HandleTypeDef htim2;
-    extern uint32_t values1[10];
-    extern uint32_t values2[10];
+    extern uint32_t values1[15];
+    extern uint32_t values2[15];
     void Error_Handler(void);
 
 #define B1_Pin GPIO_PIN_13
