@@ -26,7 +26,7 @@ void queueTaskThread(void const *argument)
         if (evt.status == osEventMessage && i < 10)
         {
             // Calculate the queue time
-            values1[i] = __HAL_TIM_GetCounter(&htim2) - evt.value.v;
+            values[0][i] = __HAL_TIM_GetCounter(&htim2) - evt.value.v;
         }
 
         i++;

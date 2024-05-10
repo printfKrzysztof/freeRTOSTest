@@ -20,7 +20,7 @@ void semaphoreTask1Thread(void const *argument)
     {
 
         osSemaphoreWait(semaphoreHandle, osWaitForever);
-        values1[i] = __HAL_TIM_GetCounter(&htim2);
+        values[0][i] = __HAL_TIM_GetCounter(&htim2);
         osSemaphoreRelease(semaphoreHandle);
         osDelay(1); // Adjust delay as needed
         i++;
@@ -35,7 +35,7 @@ void semaphoreTask2Thread(void const *argument)
     {
 
         osSemaphoreWait(semaphoreHandle, osWaitForever);
-        values2[i] = __HAL_TIM_GetCounter(&htim2);
+        values[1][i] = __HAL_TIM_GetCounter(&htim2);
         osSemaphoreRelease(semaphoreHandle);
         osDelay(1); // Adjust delay as needed
         i++;

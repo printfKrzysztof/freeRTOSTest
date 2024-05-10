@@ -16,11 +16,9 @@
 #include "cmsis_os.h"
 // Threads definitions
 
-osThreadId task1;
-osThreadId task2;
+osThreadId tasks[MAX_THREADS];
 
 osThreadDef(Task1Thread, task1Thread, osPriorityNormal, 0, 128);
-osThreadDef(Task2Thread, task2Thread, osPriorityNormal, 0, 128);
 osThreadDef(SemaphoreTask1, semaphoreTask1Thread, osPriorityNormal, 0, 128);
 osThreadDef(SemaphoreTask2, semaphoreTask2Thread, osPriorityNormal, 0, 128);
 osThreadDef(QueueTask, queueTaskThread, osPriorityNormal, 0, 128);
@@ -29,166 +27,109 @@ osThreadDef(Context2Thread, contextTask2Thread, osPriorityLow, 0, 128);
 osSemaphoreDef(semaphore);
 osMessageQDef(queue, 16, uint32_t);
 
-void resetValues()
+void resetValues(uint8_t *buffer_tx, uint8_t *buffer_rx)
 {
-    for (size_t i = 0; i < 10; i++)
+    for (size_t i = 0; i < MAX_THREADS; i++)
     {
-        values1[i] = 0;
-        values2[i] = 0;
+        for (size_t j = 0; j < MAX_TEST_PER_THREAD; j++)
+        {
+            values[i][j] = 0;
+            values[i][j] = 0;
+        }
     }
     __HAL_TIM_SET_COUNTER(&htim2, 0);
+    start_flag = 0;
+
+    for (size_t i = 0; i < COMMAND_FRAME_SIZE; i++)
+    {
+        buffer_rx[i] = 0;
+    }
+    for (size_t i = 0; i < SCORE_FRAME_SIZE; i++)
+    {
+        buffer_tx[i] = 0;
+    }
 }
 
 void mainTaskThread(void const *argument)
 {
 
     (void)(argument);
-
+    uint8_t buffer_rx[COMMAND_FRAME_SIZE];
+    uint8_t buffer_tx[SCORE_FRAME_SIZE];
     while (1)
     {
 
-        uint8_t buffer[FRAME_SIZE] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
-        HAL_UART_Receive(&huart2, buffer, 10, 100);
-        commands_em command;
-        uint8_t arg_count, args[4];
-
-        if (DecodeFrame(buffer, &command, &arg_count, args) == 0)
+        if (HAL_UART_Receive(&huart2, buffer_rx, COMMAND_FRAME_SIZE, 100) == HAL_OK)
         {
-            switch (command)
-            {
-            case TASK_SWITCH:
-                // Open new tasks and get this one on hold so it will be
-                {
 
-                    resetValues();
-                    task1 = osThreadCreate(osThread(Task1Thread), NULL);
-                    task2 = osThreadCreate(osThread(Task2Thread), NULL);
+            commands_em command;
+            uint8_t arg_count, args[4];
+            if (DecodeCommandFrame(buffer_rx, &command, &arg_count, args) == 0)
+            {
+                switch (command)
+                {
+                case TASK_SWITCH:
+
+                {
+                    resetValues(buffer_tx, buffer_rx); // Reseting all values
+
+                    // Argument 1 - Number of threads
+                    // Argument 2 - Number of measurements per task
+
+                    uint8_t task_args[args[0]][2];
+                    for (size_t i = 0; i < args[0]; i++)
+                    {
+                        task_args[i][0] = i;
+                        task_args[i][1] = args[1];
+                        tasks[i] = osThreadCreate(osThread(Task1Thread), task_args[i]);
+                    }
 
                     HAL_TIM_Base_Start(&htim2);
-                    osDelay(10); // 1 milisecond block for main task
+                    start_flag = 1;
+                    osDelay(10); // 10 milisecond block for main task
 
-                    osThreadTerminate(task1);
-                    osThreadTerminate(task2);
                     HAL_TIM_Base_Stop(&htim2);
 
-                    float value = 0;
-                    for (size_t i = 0; i < 10; i++)
+                    for (size_t i = 0; i < args[0]; i++) // For each task
                     {
-                        value += values2[i] - values1[i];
+                        osThreadTerminate(tasks[i]);
                     }
-                    value = value / 10;
-                    // float value = 2;
-                    uint8_t my_tab[4];
-                    // Pakowanie floatów
-                    uint8_t *ptr = (uint8_t *)&value;
-                    for (int i = 0; i < 4; i++)
+
+                    for (size_t i = 0; i < args[0]; i++) // For each task
                     {
-                        my_tab[i] = *(ptr + i);
+                        if (CodeScoreFrame(buffer_tx, TASK_SWITCH, (uint16_t)(args[1] * 4), (uint8_t *)(values[i])) == 0)
+                        {
+                            HAL_UART_Transmit(&huart2, buffer_tx, SCORE_FRAME_SIZE, 1000);
+                        }
+                        // osDelay(10);
                     }
-                    CodeFrame(buffer, TASK_SWITCH, 4, my_tab);
-                    HAL_UART_Transmit(&huart2, buffer, 10, 100);
                 }
                 break;
 
-            case SEMAPHORE_TIME:
-            {
-                resetValues();
-                semaphoreHandle = osSemaphoreCreate(osSemaphore(semaphore), 1);
-                task1 = osThreadCreate(osThread(SemaphoreTask1), NULL);
-                task2 = osThreadCreate(osThread(SemaphoreTask2), NULL);
-                HAL_TIM_Base_Start(&htim2);
-                osDelay(10); // 1 milisecond block for main task
-                osThreadTerminate(task1);
-                osThreadTerminate(task2);
-                HAL_TIM_Base_Stop(&htim2);
-
-                float value = 0;
-                for (size_t i = 0; i < 10; i++)
+                case SEMAPHORE_TIME:
                 {
-                    value += values2[i] - values1[i];
                 }
-                value = value / 10;
-
-                uint8_t my_tab[4];
-                // Pakowanie floatów
-                uint8_t *ptr = (uint8_t *)&value;
-                for (int i = 0; i < 4; i++)
-                {
-                    my_tab[i] = *(ptr + i);
-                }
-                CodeFrame(buffer, SEMAPHORE_TIME, 4, my_tab);
-                HAL_UART_Transmit(&huart2, buffer, 10, 100);
-            }
-            break;
-
-            case QUEUE_TIME:
-            {
-                resetValues();
-                queueHandle = osMessageCreate(osMessageQ(queue), NULL);
-                task1 = osThreadCreate(osThread(QueueTask), NULL);
-
-                HAL_TIM_Base_Start(&htim2);
-                osDelay(10); // 1 milisecond block for main task
-                osThreadTerminate(task1);
-
-                HAL_TIM_Base_Stop(&htim2);
-                float value = 0;
-                for (size_t i = 0; i < 10; i++)
-                {
-                    value += values1[i];
-                }
-                value = value / 10;
-                uint8_t my_tab[4];
-                // Pakowanie floatów
-                uint8_t *ptr = (uint8_t *)&value;
-                for (int i = 0; i < 4; i++)
-                {
-                    my_tab[i] = *(ptr + i);
-                }
-                CodeFrame(buffer, QUEUE_TIME, 4, my_tab);
-                HAL_UART_Transmit(&huart2, buffer, 10, 100);
-            }
-            break;
-
-            case CONTEXT_SWITCH: // From higher to Lower
-            {
-                resetValues();
-                task1 = osThreadCreate(osThread(Context1Thread), NULL);
-                task2 = osThreadCreate(osThread(Context2Thread), NULL);
-
-                HAL_TIM_Base_Start(&htim2);
-                osDelay(10); // 1 milisecond block for main task
-
-                osThreadTerminate(task1);
-                osThreadTerminate(task2);
-                HAL_TIM_Base_Stop(&htim2);
-
-                float value = 0;
-                for (size_t i = 0; i < 10; i++)
-                {
-                    value += values2[i] - values1[i];
-                }
-                value = value / 10;
-                uint8_t my_tab[4];
-                // Pakowanie floatów
-                uint8_t *ptr = (uint8_t *)&value;
-                for (int i = 0; i < 4; i++)
-                {
-                    my_tab[i] = *(ptr + i);
-                }
-                CodeFrame(buffer, CONTEXT_SWITCH, 4, my_tab);
-                HAL_UART_Transmit(&huart2, buffer, 10, 100);
-            }
-            break;
-
-            case COMMAND_NO:
-            {
-                if (CodeFrame(buffer, COMMAND_NO, 0, args) == 0)
-                    HAL_UART_Transmit(&huart2, buffer, 10, 100);
-            }
-            break;
-            default:
                 break;
+
+                case QUEUE_TIME:
+                {
+                }
+                break;
+
+                case CONTEXT_SWITCH: // From higher to Lower
+                {
+                }
+                break;
+
+                case COMMAND_NO:
+                {
+                    if (CodeScoreFrame(buffer_tx, COMMAND_NO, 0, args) == 0)
+                        HAL_UART_Transmit(&huart2, buffer_tx, 10, 100);
+                }
+                break;
+                default:
+                    break;
+                }
             }
         }
     }

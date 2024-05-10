@@ -56,16 +56,16 @@ uint16_t crc16(const void *buf, size_t size)
     return crc;
 }
 
-int DecodeFrame(uint8_t *frame, uint8_t *command, uint8_t *arg_count, uint8_t *args)
+int DecodeCommandFrame(uint8_t *frame, uint8_t *command, uint8_t *arg_count, uint8_t *args)
 {
     if (frame[0] != 0xFF)
         return ERR_FRM_NO_START;
     if (frame[1] > COMMAND_NO)
         return ERR_FRM_WRONG_COMMAND;
-    if (frame[2] > MAX_ARGS)
+    if (frame[2] > MAX_ARGS_COMMAND_FRAME)
         return ERR_FRM_TOO_MANY_ARGS;
 
-    if (crc16(frame, 7) != ((uint16_t)(frame[7]) << 8 | (uint16_t)(frame[8])))
+    if (crc16(frame, 3 + frame[2]) != ((uint16_t)(frame[7]) << 8 | (uint16_t)(frame[8])))
         return ERR_FRM_CRC;
 
     *command = frame[1];
@@ -74,23 +74,24 @@ int DecodeFrame(uint8_t *frame, uint8_t *command, uint8_t *arg_count, uint8_t *a
     {
         args[i] = frame[3 + i];
     }
-
     return 0;
 }
 
-int CodeFrame(uint8_t *frame, uint8_t command, uint8_t arg_count, uint8_t *args)
+int CodeScoreFrame(uint8_t *frame, uint8_t command, uint16_t arg_count, uint8_t *args)
 {
-    if (arg_count > MAX_ARGS)
-        return ERR_FRM_WRONG_COMMAND;
+    if (arg_count > MAX_ARGS_SCORE_FRAME)
+        return ERR_FRM_TOO_MANY_ARGS;
     frame[0] = 0xFF;
     frame[1] = command;
-    frame[2] = arg_count;
+    frame[2] = (uint8_t)(arg_count >> 8);
+    frame[3] = (uint8_t)(arg_count & 0xFF);
+
     for (int i = 0; i < arg_count; i++)
     {
-        frame[3 + i] = args[i];
+        frame[4 + i] = args[i];
     }
-    uint16_t crc = crc16(frame, 7);
-    frame[7] = (uint8_t)(crc >> 8);
-    frame[8] = (uint8_t)(crc & 0xFF);
+    uint16_t crc = crc16(frame, arg_count + 4);
+    frame[404] = (uint8_t)(crc >> 8);
+    frame[405] = (uint8_t)(crc & 0xFF);
     return 0;
 }

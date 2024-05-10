@@ -12,8 +12,11 @@
 #include "stdlib.h"
 #include "inttypes.h"
 
-#define MAX_ARGS 4
-#define FRAME_SIZE (5 + MAX_ARGS)
+#define MAX_ARGS_COMMAND_FRAME 4
+#define MAX_ARGS_SCORE_FRAME 400
+#define COMMAND_FRAME_SIZE (5 + MAX_ARGS_COMMAND_FRAME)
+#define SCORE_FRAME_SIZE (6 + MAX_ARGS_SCORE_FRAME)
+
 typedef enum
 {
     TASK_SWITCH = 0,
@@ -38,7 +41,7 @@ typedef enum
  * @param args
  * @return int
  */
-int DecodeFrame(uint8_t *frame, uint8_t *command, uint8_t *arg_count, uint8_t *args);
+int DecodeCommandFrame(uint8_t *frame, uint8_t *command, uint8_t *arg_count, uint8_t *args);
 
 /**
  * @brief Codes frame with CRC
@@ -49,4 +52,4 @@ int DecodeFrame(uint8_t *frame, uint8_t *command, uint8_t *arg_count, uint8_t *a
  * @param args
  * @return ERR_FRM
  */
-int CodeFrame(uint8_t *frame, uint8_t command, uint8_t arg_count, uint8_t *args);
+int CodeScoreFrame(uint8_t *frame, uint8_t command, uint16_t arg_count, uint8_t *args);

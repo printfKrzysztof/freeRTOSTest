@@ -12,10 +12,12 @@
 #include "cmsis_os.h"
 #include "threads_inc.h"
 
+// #define TESTING 1
+
 // Externs
 osSemaphoreId semaphoreHandle;
-uint32_t values1[15];
-uint32_t values2[15];
+uint32_t values[MAX_THREADS][MAX_TEST_PER_THREAD];
+int start_flag;
 osThreadId defaultTaskHandle;
 osMessageQId queueHandle;
 TIM_HandleTypeDef htim2;
@@ -25,6 +27,11 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_TIM2_Init(void);
+
+void intToAscii(uint32_t num, char *buffer)
+{
+  sprintf(buffer, "%02d", num);
+}
 
 /**
  * @brief  The application entry point.
@@ -41,13 +48,62 @@ int main(void)
   MX_USART2_UART_Init();
 
   MX_TIM2_Init();
+
+  // Test on the start to determine how much time reading takes
+
+  HAL_TIM_Base_Start(&htim2);
+
+  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+
+#ifdef TESTING
+
+  __HAL_TIM_SET_COUNTER(&htim2, 0);
+
+  int i = 0;
+  uint32_t time[101];
+  HAL_TIM_Base_Start(&htim2);
+  // First ten is to check how much does read take
+
+  while (1)
+  {
+    time[i++] = __HAL_TIM_GetCounter(&htim2);
+    if (i >= 100)
+      break;
+  }
+  // time[i++] = __HAL_TIM_GetCounter(&htim2);
+  // time[i++] = __HAL_TIM_GetCounter(&htim2);
+  // time[i++] = __HAL_TIM_GetCounter(&htim2);
+  // time[i++] = __HAL_TIM_GetCounter(&htim2);
+  // time[i++] = __HAL_TIM_GetCounter(&htim2);
+  // time[i++] = __HAL_TIM_GetCounter(&htim2);
+  // time[i++] = __HAL_TIM_GetCounter(&htim2);
+  // time[i++] = __HAL_TIM_GetCounter(&htim2);
+  // time[i++] = __HAL_TIM_GetCounter(&htim2);
+
+  // for (int i = 0; i < 10000; i++)
+  // {
+  //   __asm__ __volatile__("nop");
+  // }
+  time[i++] = __HAL_TIM_GetCounter(&htim2);
+  HAL_TIM_Base_Stop(&htim2);
+
+  char text[2];
+  for (int j = 0; j < i - 1; j++)
+  {
+    intToAscii(time[j + 1] - time[j], text);
+    HAL_UART_Transmit(&huart2, (uint8_t *)text, 2, 100);
+    HAL_UART_Transmit(&huart2, " ", 1, 100);
+  }
+
+#else
   osThreadDef(MainTaskThread, mainTaskThread, osPriorityNormal, 0, 256);
   defaultTaskHandle = osThreadCreate(osThread(MainTaskThread), NULL);
   osKernelStart();
+#endif // TESTING
 
-  // Some hard fault shit
   while (1)
   {
+    // Only if testing
   }
 }
 
@@ -113,9 +169,9 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 71;
+  htim2.Init.Prescaler = 0;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 10000000; // Reset after 10 s
+  htim2.Init.Period = 0xFFFFFFFF; // Reset after ~ 59 s
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)

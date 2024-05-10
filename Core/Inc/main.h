@@ -27,12 +27,15 @@ extern "C"
 #endif
 
 /* Includes ------------------------------------------------------------------*/
+#define MAX_THREADS 100
+#define MAX_TEST_PER_THREAD 100
 #include "stm32f3xx_hal.h"
 
     extern UART_HandleTypeDef huart2;
     extern TIM_HandleTypeDef htim2;
-    extern uint32_t values1[15];
-    extern uint32_t values2[15];
+    extern uint32_t values[MAX_THREADS][MAX_TEST_PER_THREAD];
+    extern int start_flag;
+
     void Error_Handler(void);
 
 #define B1_Pin GPIO_PIN_13
