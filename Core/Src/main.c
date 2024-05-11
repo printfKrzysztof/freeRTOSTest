@@ -67,7 +67,7 @@ int main(void)
   while (1)
   {
     time[i++] = __HAL_TIM_GetCounter(&htim2);
-    if (i >= 100)
+    if (i == 100)
       break;
   }
   // time[i++] = __HAL_TIM_GetCounter(&htim2);

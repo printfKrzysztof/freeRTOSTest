@@ -16,17 +16,18 @@ void task1Thread(void const *argument)
 {
 
     const uint8_t data = ((uint8_t *)argument)[0]; // Task number
-    int i = ((uint8_t *)argument)[1];              // Number of measurements per task
+    const int max = ((uint8_t *)argument)[1];      // Number of measurements per task
     while (!start_flag)
     {
         osThreadYield(); // Forcing task switch so lower priority has a chance to take context
     }
 
+    int i = 0;
     while (1)
     {
         osThreadYield(); // Forcing task switch
-        values[data][i--] = __HAL_TIM_GetCounter(&htim2);
-        if (i == 0)
+        values[data][i++] = __HAL_TIM_GetCounter(&htim2);
+        if (i == max)
             break;
     }
 
