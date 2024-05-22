@@ -70,20 +70,7 @@ int main(void)
     if (i == 100)
       break;
   }
-  // time[i++] = __HAL_TIM_GetCounter(&htim2);
-  // time[i++] = __HAL_TIM_GetCounter(&htim2);
-  // time[i++] = __HAL_TIM_GetCounter(&htim2);
-  // time[i++] = __HAL_TIM_GetCounter(&htim2);
-  // time[i++] = __HAL_TIM_GetCounter(&htim2);
-  // time[i++] = __HAL_TIM_GetCounter(&htim2);
-  // time[i++] = __HAL_TIM_GetCounter(&htim2);
-  // time[i++] = __HAL_TIM_GetCounter(&htim2);
-  // time[i++] = __HAL_TIM_GetCounter(&htim2);
 
-  // for (int i = 0; i < 10000; i++)
-  // {
-  //   __asm__ __volatile__("nop");
-  // }
   time[i++] = __HAL_TIM_GetCounter(&htim2);
   HAL_TIM_Base_Stop(&htim2);
 
@@ -96,8 +83,8 @@ int main(void)
   }
 
 #else
-  osThreadDef(MainTaskThread, mainTaskThread, osPriorityNormal, 0, 256);
-  defaultTaskHandle = osThreadCreate(osThread(MainTaskThread), NULL);
+  osThreadDef(MainThread, mainThread, osPriorityNormal, 0, 256);
+  defaultTaskHandle = osThreadCreate(osThread(MainThread), NULL);
   osKernelStart();
 #endif // TESTING
 

@@ -77,6 +77,9 @@ Discarded input sections
  .text          0x0000000000000000        0x0 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
  .data          0x0000000000000000        0x0 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
  .bss           0x0000000000000000        0x0 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
+ .text          0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/force_switch_thread.c.obj
+ .data          0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/force_switch_thread.c.obj
+ .bss           0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/force_switch_thread.c.obj
  .text          0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
  .data          0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
  .bss           0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
@@ -84,37 +87,31 @@ Discarded input sections
                 0x0000000000000000       0x10 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
  .rodata.os_semaphore_def_semaphore
                 0x0000000000000000        0x8 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
- .rodata.os_thread_def_Context1Thread
+ .rodata.os_thread_def_QueueReciever
                 0x0000000000000000       0x1c CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
- .rodata.os_thread_def_Context2Thread
+ .rodata.os_thread_def_QueueTransmitter
                 0x0000000000000000       0x1c CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
- .rodata.os_thread_def_QueueTask
+ .rodata.os_thread_def_SemaphoreThread
                 0x0000000000000000       0x1c CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
- .rodata.os_thread_def_SemaphoreTask1
-                0x0000000000000000       0x1c CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
- .rodata.os_thread_def_SemaphoreTask2
-                0x0000000000000000       0x1c CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
- .text          0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/test1.c.obj
- .data          0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/test1.c.obj
- .bss           0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/test1.c.obj
- .text          0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/test2.c.obj
- .data          0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/test2.c.obj
- .bss           0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/test2.c.obj
- .text.semaphoreTask1Thread
-                0x0000000000000000       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/test2.c.obj
- .text.semaphoreTask2Thread
-                0x0000000000000000       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/test2.c.obj
- .comment       0x0000000000000000       0x4a CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/test2.c.obj
- .ARM.attributes
-                0x0000000000000000       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/test2.c.obj
- .text          0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/test3.c.obj
- .data          0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/test3.c.obj
- .bss           0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/test3.c.obj
+ .text          0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/queue_thread.c.obj
+ .data          0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/queue_thread.c.obj
+ .bss           0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/queue_thread.c.obj
  .text.queueTaskThread
-                0x0000000000000000       0x4c CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/test3.c.obj
- .comment       0x0000000000000000       0x4a CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/test3.c.obj
+                0x0000000000000000       0x4c CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/queue_thread.c.obj
+ .comment       0x0000000000000000       0x4a CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/queue_thread.c.obj
  .ARM.attributes
-                0x0000000000000000       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/test3.c.obj
+                0x0000000000000000       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/queue_thread.c.obj
+ .text          0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/semaphore_thread.c.obj
+ .data          0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/semaphore_thread.c.obj
+ .bss           0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/semaphore_thread.c.obj
+ .text.semaphoreThread
+                0x0000000000000000       0x48 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/semaphore_thread.c.obj
+ .comment       0x0000000000000000       0x4a CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/semaphore_thread.c.obj
+ .ARM.attributes
+                0x0000000000000000       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/semaphore_thread.c.obj
+ .text          0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/switch_thread.c.obj
+ .data          0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/switch_thread.c.obj
+ .bss           0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/switch_thread.c.obj
  .text          0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/frame_controller.c.obj
  .data          0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/frame_controller.c.obj
  .bss           0x0000000000000000        0x0 CMakeFiles/freeRTOSTest.dir/Core/Src/frame_controller.c.obj
@@ -1625,10 +1622,11 @@ START GROUP
 LOAD /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a
 LOAD /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a
 END GROUP
+LOAD CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/force_switch_thread.c.obj
 LOAD CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
-LOAD CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/test1.c.obj
-LOAD CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/test2.c.obj
-LOAD CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/test3.c.obj
+LOAD CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/queue_thread.c.obj
+LOAD CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/semaphore_thread.c.obj
+LOAD CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/switch_thread.c.obj
 LOAD CMakeFiles/freeRTOSTest.dir/Core/Src/frame_controller.c.obj
 LOAD CMakeFiles/freeRTOSTest.dir/Core/Src/main.c.obj
 LOAD CMakeFiles/freeRTOSTest.dir/Core/Src/freertos.c.obj
@@ -1688,7 +1686,7 @@ LOAD /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/ar
                 0x0000000008000000                g_pfnVectors
                 0x0000000008000194                . = ALIGN (0x4)
 
-.text           0x00000000080001a0     0x2d3c
+.text           0x00000000080001a0     0x30dc
                 0x00000000080001a0                . = ALIGN (0x4)
  *(.text)
  .text          0x00000000080001a0       0x40 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
@@ -1698,473 +1696,498 @@ LOAD /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/ar
                 0x00000000080001e0                __libc_init_array
  .text.memset   0x0000000008000228       0x10 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
                 0x0000000008000228                memset
+ .text.forceSwitchThread
+                0x0000000008000238       0x48 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/force_switch_thread.c.obj
+                0x0000000008000238                forceSwitchThread
+ .text.forceSwitchPriorityThread
+                0x0000000008000280       0x48 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/force_switch_thread.c.obj
+                0x0000000008000280                forceSwitchPriorityThread
  .text.resetValues
-                0x0000000008000238       0x40 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
-                0x0000000008000238                resetValues
- .text.mainTaskThread
-                0x0000000008000278      0x134 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
-                0x0000000008000278                mainTaskThread
- .text.task1Thread
-                0x00000000080003ac       0x48 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/test1.c.obj
-                0x00000000080003ac                task1Thread
- .text.crc16    0x00000000080003f4       0x28 CMakeFiles/freeRTOSTest.dir/Core/Src/frame_controller.c.obj
-                0x00000000080003f4                crc16
+                0x00000000080002c8       0x40 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
+                0x00000000080002c8                resetValues
+ .text.mainThread
+                0x0000000008000308      0x3ac CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
+                0x0000000008000308                mainThread
+ .text.switchThread
+                0x00000000080006b4       0x6c CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/switch_thread.c.obj
+                0x00000000080006b4                switchThread
+ .text.switchPriorityThread
+                0x0000000008000720       0x70 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/switch_thread.c.obj
+                0x0000000008000720                switchPriorityThread
+ .text.crc16    0x0000000008000790       0x28 CMakeFiles/freeRTOSTest.dir/Core/Src/frame_controller.c.obj
+                0x0000000008000790                crc16
  .text.DecodeCommandFrame
-                0x000000000800041c       0x70 CMakeFiles/freeRTOSTest.dir/Core/Src/frame_controller.c.obj
-                0x000000000800041c                DecodeCommandFrame
+                0x00000000080007b8       0x70 CMakeFiles/freeRTOSTest.dir/Core/Src/frame_controller.c.obj
+                0x00000000080007b8                DecodeCommandFrame
  .text.CodeScoreFrame
-                0x000000000800048c       0x46 CMakeFiles/freeRTOSTest.dir/Core/Src/frame_controller.c.obj
-                0x000000000800048c                CodeScoreFrame
- *fill*         0x00000000080004d2        0x2 
+                0x0000000008000828       0x46 CMakeFiles/freeRTOSTest.dir/Core/Src/frame_controller.c.obj
+                0x0000000008000828                CodeScoreFrame
+ *fill*         0x000000000800086e        0x2 
  .text.SystemClock_Config
-                0x00000000080004d4       0x84 CMakeFiles/freeRTOSTest.dir/Core/Src/main.c.obj
-                0x00000000080004d4                SystemClock_Config
+                0x0000000008000870       0x84 CMakeFiles/freeRTOSTest.dir/Core/Src/main.c.obj
+                0x0000000008000870                SystemClock_Config
  .text.startup.main
-                0x0000000008000558      0x16c CMakeFiles/freeRTOSTest.dir/Core/Src/main.c.obj
-                0x0000000008000558                main
+                0x00000000080008f4      0x16c CMakeFiles/freeRTOSTest.dir/Core/Src/main.c.obj
+                0x00000000080008f4                main
  .text.HAL_TIM_PeriodElapsedCallback
-                0x00000000080006c4       0x14 CMakeFiles/freeRTOSTest.dir/Core/Src/main.c.obj
-                0x00000000080006c4                HAL_TIM_PeriodElapsedCallback
+                0x0000000008000a60       0x14 CMakeFiles/freeRTOSTest.dir/Core/Src/main.c.obj
+                0x0000000008000a60                HAL_TIM_PeriodElapsedCallback
  .text.vApplicationGetIdleTaskMemory
-                0x00000000080006d8       0x18 CMakeFiles/freeRTOSTest.dir/Core/Src/freertos.c.obj
-                0x00000000080006d8                vApplicationGetIdleTaskMemory
+                0x0000000008000a74       0x18 CMakeFiles/freeRTOSTest.dir/Core/Src/freertos.c.obj
+                0x0000000008000a74                vApplicationGetIdleTaskMemory
  .text.NMI_Handler
-                0x00000000080006f0        0x2 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_it.c.obj
-                0x00000000080006f0                NMI_Handler
+                0x0000000008000a8c        0x2 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_it.c.obj
+                0x0000000008000a8c                NMI_Handler
  .text.HardFault_Handler
-                0x00000000080006f2        0x2 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_it.c.obj
-                0x00000000080006f2                HardFault_Handler
+                0x0000000008000a8e        0x2 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_it.c.obj
+                0x0000000008000a8e                HardFault_Handler
  .text.MemManage_Handler
-                0x00000000080006f4        0x2 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_it.c.obj
-                0x00000000080006f4                MemManage_Handler
+                0x0000000008000a90        0x2 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_it.c.obj
+                0x0000000008000a90                MemManage_Handler
  .text.BusFault_Handler
-                0x00000000080006f6        0x2 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_it.c.obj
-                0x00000000080006f6                BusFault_Handler
+                0x0000000008000a92        0x2 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_it.c.obj
+                0x0000000008000a92                BusFault_Handler
  .text.UsageFault_Handler
-                0x00000000080006f8        0x2 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_it.c.obj
-                0x00000000080006f8                UsageFault_Handler
+                0x0000000008000a94        0x2 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_it.c.obj
+                0x0000000008000a94                UsageFault_Handler
  .text.DebugMon_Handler
-                0x00000000080006fa        0x2 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_it.c.obj
-                0x00000000080006fa                DebugMon_Handler
+                0x0000000008000a96        0x2 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_it.c.obj
+                0x0000000008000a96                DebugMon_Handler
  .text.TIM1_UP_TIM16_IRQHandler
-                0x00000000080006fc        0xc CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_it.c.obj
-                0x00000000080006fc                TIM1_UP_TIM16_IRQHandler
+                0x0000000008000a98        0xc CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_it.c.obj
+                0x0000000008000a98                TIM1_UP_TIM16_IRQHandler
  .text.HAL_MspInit
-                0x0000000008000708       0x3c CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_hal_msp.c.obj
-                0x0000000008000708                HAL_MspInit
+                0x0000000008000aa4       0x3c CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_hal_msp.c.obj
+                0x0000000008000aa4                HAL_MspInit
  .text.HAL_TIM_Base_MspInit
-                0x0000000008000744       0x24 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_hal_msp.c.obj
-                0x0000000008000744                HAL_TIM_Base_MspInit
+                0x0000000008000ae0       0x24 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_hal_msp.c.obj
+                0x0000000008000ae0                HAL_TIM_Base_MspInit
  .text.HAL_UART_MspInit
-                0x0000000008000768       0x60 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_hal_msp.c.obj
-                0x0000000008000768                HAL_UART_MspInit
+                0x0000000008000b04       0x60 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_hal_msp.c.obj
+                0x0000000008000b04                HAL_UART_MspInit
  .text.HAL_InitTick
-                0x00000000080007c8       0x90 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_hal_timebase_tim.c.obj
-                0x00000000080007c8                HAL_InitTick
+                0x0000000008000b64       0x90 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_hal_timebase_tim.c.obj
+                0x0000000008000b64                HAL_InitTick
  .text.HAL_Init
-                0x0000000008000858       0x24 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
-                0x0000000008000858                HAL_Init
+                0x0000000008000bf4       0x24 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
+                0x0000000008000bf4                HAL_Init
  .text.HAL_IncTick
-                0x000000000800087c       0x18 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
-                0x000000000800087c                HAL_IncTick
+                0x0000000008000c18       0x18 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
+                0x0000000008000c18                HAL_IncTick
  .text.HAL_GetTick
-                0x0000000008000894        0xc CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
-                0x0000000008000894                HAL_GetTick
+                0x0000000008000c30        0xc CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
+                0x0000000008000c30                HAL_GetTick
  .text.HAL_RCC_OscConfig
-                0x00000000080008a0      0x52c CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
-                0x00000000080008a0                HAL_RCC_OscConfig
+                0x0000000008000c3c      0x52c CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
+                0x0000000008000c3c                HAL_RCC_OscConfig
  .text.HAL_RCC_GetSysClockFreq
-                0x0000000008000dcc       0x58 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
-                0x0000000008000dcc                HAL_RCC_GetSysClockFreq
+                0x0000000008001168       0x58 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
+                0x0000000008001168                HAL_RCC_GetSysClockFreq
  .text.HAL_RCC_ClockConfig
-                0x0000000008000e24      0x158 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
-                0x0000000008000e24                HAL_RCC_ClockConfig
+                0x00000000080011c0      0x158 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
+                0x00000000080011c0                HAL_RCC_ClockConfig
  .text.HAL_RCC_GetPCLK1Freq
-                0x0000000008000f7c       0x30 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
-                0x0000000008000f7c                HAL_RCC_GetPCLK1Freq
+                0x0000000008001318       0x30 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
+                0x0000000008001318                HAL_RCC_GetPCLK1Freq
  .text.HAL_RCC_GetPCLK2Freq
-                0x0000000008000fac       0x30 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
-                0x0000000008000fac                HAL_RCC_GetPCLK2Freq
+                0x0000000008001348       0x30 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
+                0x0000000008001348                HAL_RCC_GetPCLK2Freq
  .text.HAL_RCC_GetClockConfig
-                0x0000000008000fdc       0x3c CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
-                0x0000000008000fdc                HAL_RCC_GetClockConfig
+                0x0000000008001378       0x3c CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
+                0x0000000008001378                HAL_RCC_GetClockConfig
  .text.HAL_RCCEx_PeriphCLKConfig
-                0x0000000008001018      0x28c CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.c.obj
-                0x0000000008001018                HAL_RCCEx_PeriphCLKConfig
+                0x00000000080013b4      0x28c CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.c.obj
+                0x00000000080013b4                HAL_RCCEx_PeriphCLKConfig
  .text.HAL_GPIO_Init
-                0x00000000080012a4      0x1a4 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c.obj
-                0x00000000080012a4                HAL_GPIO_Init
+                0x0000000008001640      0x1a4 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c.obj
+                0x0000000008001640                HAL_GPIO_Init
  .text.HAL_GPIO_WritePin
-                0x0000000008001448        0xa CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c.obj
-                0x0000000008001448                HAL_GPIO_WritePin
+                0x00000000080017e4        0xa CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c.obj
+                0x00000000080017e4                HAL_GPIO_WritePin
  .text.HAL_GPIO_TogglePin
-                0x0000000008001452       0x12 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c.obj
-                0x0000000008001452                HAL_GPIO_TogglePin
+                0x00000000080017ee       0x12 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c.obj
+                0x00000000080017ee                HAL_GPIO_TogglePin
  .text.HAL_NVIC_SetPriorityGrouping
-                0x0000000008001464       0x24 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
-                0x0000000008001464                HAL_NVIC_SetPriorityGrouping
+                0x0000000008001800       0x24 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
+                0x0000000008001800                HAL_NVIC_SetPriorityGrouping
  .text.HAL_NVIC_SetPriority
-                0x0000000008001488       0x64 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
-                0x0000000008001488                HAL_NVIC_SetPriority
+                0x0000000008001824       0x64 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
+                0x0000000008001824                HAL_NVIC_SetPriority
  .text.HAL_NVIC_EnableIRQ
-                0x00000000080014ec       0x1c CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
-                0x00000000080014ec                HAL_NVIC_EnableIRQ
+                0x0000000008001888       0x1c CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
+                0x0000000008001888                HAL_NVIC_EnableIRQ
  .text.HAL_TIM_Base_Start
-                0x0000000008001508       0x6c CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
-                0x0000000008001508                HAL_TIM_Base_Start
+                0x00000000080018a4       0x6c CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
+                0x00000000080018a4                HAL_TIM_Base_Start
  .text.HAL_TIM_Base_Stop
-                0x0000000008001574       0x28 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
-                0x0000000008001574                HAL_TIM_Base_Stop
+                0x0000000008001910       0x28 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
+                0x0000000008001910                HAL_TIM_Base_Stop
  .text.HAL_TIM_Base_Start_IT
-                0x000000000800159c       0x74 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
-                0x000000000800159c                HAL_TIM_Base_Start_IT
+                0x0000000008001938       0x74 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
+                0x0000000008001938                HAL_TIM_Base_Start_IT
  .text.HAL_TIM_OC_DelayElapsedCallback
-                0x0000000008001610        0x2 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
-                0x0000000008001610                HAL_TIM_OC_DelayElapsedCallback
+                0x00000000080019ac        0x2 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
+                0x00000000080019ac                HAL_TIM_OC_DelayElapsedCallback
  .text.HAL_TIM_IC_CaptureCallback
-                0x0000000008001612        0x2 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
-                0x0000000008001612                HAL_TIM_IC_CaptureCallback
+                0x00000000080019ae        0x2 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
+                0x00000000080019ae                HAL_TIM_IC_CaptureCallback
  .text.HAL_TIM_PWM_PulseFinishedCallback
-                0x0000000008001614        0x2 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
-                0x0000000008001614                HAL_TIM_PWM_PulseFinishedCallback
+                0x00000000080019b0        0x2 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
+                0x00000000080019b0                HAL_TIM_PWM_PulseFinishedCallback
  .text.HAL_TIM_TriggerCallback
-                0x0000000008001616        0x2 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
-                0x0000000008001616                HAL_TIM_TriggerCallback
+                0x00000000080019b2        0x2 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
+                0x00000000080019b2                HAL_TIM_TriggerCallback
  .text.HAL_TIM_IRQHandler
-                0x0000000008001618      0x160 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
-                0x0000000008001618                HAL_TIM_IRQHandler
+                0x00000000080019b4      0x160 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
+                0x00000000080019b4                HAL_TIM_IRQHandler
  .text.TIM_Base_SetConfig
-                0x0000000008001778       0xd4 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
-                0x0000000008001778                TIM_Base_SetConfig
+                0x0000000008001b14       0xd4 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
+                0x0000000008001b14                TIM_Base_SetConfig
  .text.HAL_TIM_Base_Init
-                0x000000000800184c       0x60 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
-                0x000000000800184c                HAL_TIM_Base_Init
+                0x0000000008001be8       0x60 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
+                0x0000000008001be8                HAL_TIM_Base_Init
  .text.TIM_ETR_SetConfig
-                0x00000000080018ac       0x14 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
-                0x00000000080018ac                TIM_ETR_SetConfig
+                0x0000000008001c48       0x14 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
+                0x0000000008001c48                TIM_ETR_SetConfig
  .text.HAL_TIM_ConfigClockSource
-                0x00000000080018c0      0x138 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
-                0x00000000080018c0                HAL_TIM_ConfigClockSource
+                0x0000000008001c5c      0x138 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
+                0x0000000008001c5c                HAL_TIM_ConfigClockSource
  .text.HAL_TIMEx_MasterConfigSynchronization
-                0x00000000080019f8       0x94 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.c.obj
-                0x00000000080019f8                HAL_TIMEx_MasterConfigSynchronization
+                0x0000000008001d94       0x94 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.c.obj
+                0x0000000008001d94                HAL_TIMEx_MasterConfigSynchronization
  .text.HAL_TIMEx_CommutCallback
-                0x0000000008001a8c        0x2 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.c.obj
-                0x0000000008001a8c                HAL_TIMEx_CommutCallback
+                0x0000000008001e28        0x2 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.c.obj
+                0x0000000008001e28                HAL_TIMEx_CommutCallback
  .text.HAL_TIMEx_BreakCallback
-                0x0000000008001a8e        0x2 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.c.obj
-                0x0000000008001a8e                HAL_TIMEx_BreakCallback
+                0x0000000008001e2a        0x2 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.c.obj
+                0x0000000008001e2a                HAL_TIMEx_BreakCallback
  .text.HAL_TIMEx_Break2Callback
-                0x0000000008001a90        0x2 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.c.obj
-                0x0000000008001a90                HAL_TIMEx_Break2Callback
+                0x0000000008001e2c        0x2 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.c.obj
+                0x0000000008001e2c                HAL_TIMEx_Break2Callback
  .text.UART_EndRxTransfer
-                0x0000000008001a92       0x50 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
- *fill*         0x0000000008001ae2        0x2 
+                0x0000000008001e2e       0x50 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
+ *fill*         0x0000000008001e7e        0x2 
  .text.UART_SetConfig
-                0x0000000008001ae4      0x204 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
-                0x0000000008001ae4                UART_SetConfig
+                0x0000000008001e80      0x204 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
+                0x0000000008001e80                UART_SetConfig
  .text.UART_AdvFeatureConfig
-                0x0000000008001ce8       0xa8 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
-                0x0000000008001ce8                UART_AdvFeatureConfig
+                0x0000000008002084       0xa8 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
+                0x0000000008002084                UART_AdvFeatureConfig
  .text.UART_WaitOnFlagUntilTimeout
-                0x0000000008001d90       0x88 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
-                0x0000000008001d90                UART_WaitOnFlagUntilTimeout
+                0x000000000800212c       0x88 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
+                0x000000000800212c                UART_WaitOnFlagUntilTimeout
  .text.HAL_UART_Transmit
-                0x0000000008001e18       0xa4 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
-                0x0000000008001e18                HAL_UART_Transmit
+                0x00000000080021b4       0xa4 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
+                0x00000000080021b4                HAL_UART_Transmit
  .text.HAL_UART_Receive
-                0x0000000008001ebc       0xe4 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
-                0x0000000008001ebc                HAL_UART_Receive
+                0x0000000008002258       0xe4 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
+                0x0000000008002258                HAL_UART_Receive
  .text.UART_CheckIdleState
-                0x0000000008001fa0       0xb6 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
-                0x0000000008001fa0                UART_CheckIdleState
+                0x000000000800233c       0xb6 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
+                0x000000000800233c                UART_CheckIdleState
  .text.HAL_UART_Init
-                0x0000000008002056       0x5c CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
-                0x0000000008002056                HAL_UART_Init
- *fill*         0x00000000080020b2        0x2 
+                0x00000000080023f2       0x5c CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
+                0x00000000080023f2                HAL_UART_Init
+ *fill*         0x000000000800244e        0x2 
  .text.SystemInit
-                0x00000000080020b4       0x14 CMakeFiles/freeRTOSTest.dir/Core/Src/system_stm32f3xx.c.obj
-                0x00000000080020b4                SystemInit
+                0x0000000008002450       0x14 CMakeFiles/freeRTOSTest.dir/Core/Src/system_stm32f3xx.c.obj
+                0x0000000008002450                SystemInit
  .text.vListInitialise
-                0x00000000080020c8       0x16 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
-                0x00000000080020c8                vListInitialise
+                0x0000000008002464       0x16 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+                0x0000000008002464                vListInitialise
  .text.vListInitialiseItem
-                0x00000000080020de        0x6 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
-                0x00000000080020de                vListInitialiseItem
+                0x000000000800247a        0x6 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+                0x000000000800247a                vListInitialiseItem
  .text.vListInsertEnd
-                0x00000000080020e4       0x18 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
-                0x00000000080020e4                vListInsertEnd
+                0x0000000008002480       0x18 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+                0x0000000008002480                vListInsertEnd
  .text.vListInsert
-                0x00000000080020fc       0x2e CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
-                0x00000000080020fc                vListInsert
+                0x0000000008002498       0x2e CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+                0x0000000008002498                vListInsert
  .text.uxListRemove
-                0x000000000800212a       0x20 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
-                0x000000000800212a                uxListRemove
- *fill*         0x000000000800214a        0x2 
+                0x00000000080024c6       0x20 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+                0x00000000080024c6                uxListRemove
+ *fill*         0x00000000080024e6        0x2 
  .text.prvAddNewTaskToReadyList
-                0x000000000800214c       0xfc CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x00000000080024e8       0xfc CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .text.prvAddCurrentTaskToDelayedList
-                0x0000000008002248       0x88 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x00000000080025e4       0x88 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .text.prvResetNextTaskUnblockTime
-                0x00000000080022d0       0x24 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x000000000800266c       0x24 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .text.prvDeleteTCB
-                0x00000000080022f4       0x36 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- *fill*         0x000000000800232a        0x2 
+                0x0000000008002690       0x36 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+ *fill*         0x00000000080026c6        0x2 
  .text.prvIdleTask
-                0x000000000800232c       0x60 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x00000000080026c8       0x60 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .text.prvInitialiseNewTask.constprop.0
-                0x000000000800238c       0x8a CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x0000000008002728       0x8a CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .text.xTaskCreateStatic
-                0x0000000008002416       0x6e CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x0000000008002416                xTaskCreateStatic
+                0x00000000080027b2       0x6e CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x00000000080027b2                xTaskCreateStatic
  .text.xTaskCreate
-                0x0000000008002484       0x5a CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x0000000008002484                xTaskCreate
- *fill*         0x00000000080024de        0x2 
+                0x0000000008002820       0x5a CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x0000000008002820                xTaskCreate
+ *fill*         0x000000000800287a        0x2 
  .text.vTaskDelete
-                0x00000000080024e0       0xd4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x00000000080024e0                vTaskDelete
+                0x000000000800287c       0xd4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x000000000800287c                vTaskDelete
  .text.vTaskStartScheduler
-                0x00000000080025b4       0x70 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x00000000080025b4                vTaskStartScheduler
+                0x0000000008002950       0x70 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x0000000008002950                vTaskStartScheduler
  .text.vTaskSuspendAll
-                0x0000000008002624       0x10 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x0000000008002624                vTaskSuspendAll
+                0x00000000080029c0       0x10 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x00000000080029c0                vTaskSuspendAll
  .text.xTaskIncrementTick
-                0x0000000008002634      0x130 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x0000000008002634                xTaskIncrementTick
+                0x00000000080029d0      0x130 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x00000000080029d0                xTaskIncrementTick
  .text.xTaskResumeAll
-                0x0000000008002764       0xf0 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x0000000008002764                xTaskResumeAll
+                0x0000000008002b00       0xf0 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x0000000008002b00                xTaskResumeAll
  .text.vTaskDelay
-                0x0000000008002854       0x48 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x0000000008002854                vTaskDelay
+                0x0000000008002bf0       0x48 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x0000000008002bf0                vTaskDelay
  .text.vTaskSwitchContext
-                0x000000000800289c       0x74 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x000000000800289c                vTaskSwitchContext
+                0x0000000008002c38       0x74 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x0000000008002c38                vTaskSwitchContext
  .text.osKernelStart
-                0x0000000008002910        0xa CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
-                0x0000000008002910                osKernelStart
+                0x0000000008002cac        0xa CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
+                0x0000000008002cac                osKernelStart
  .text.osThreadCreate
-                0x000000000800291a       0x50 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
-                0x000000000800291a                osThreadCreate
+                0x0000000008002cb6       0x50 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
+                0x0000000008002cb6                osThreadCreate
  .text.osThreadTerminate
-                0x000000000800296a        0xa CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
-                0x000000000800296a                osThreadTerminate
+                0x0000000008002d06        0xa CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
+                0x0000000008002d06                osThreadTerminate
  .text.osThreadYield
-                0x0000000008002974       0x18 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
-                0x0000000008002974                osThreadYield
- .text.osDelay  0x000000000800298c       0x10 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
-                0x000000000800298c                osDelay
+                0x0000000008002d10       0x18 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
+                0x0000000008002d10                osThreadYield
+ .text.osDelay  0x0000000008002d28       0x10 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
+                0x0000000008002d28                osDelay
  .text.prvInsertBlockIntoFreeList
-                0x000000000800299c       0x48 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+                0x0000000008002d38       0x48 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
  .text.pvPortMalloc
-                0x00000000080029e4      0x124 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
-                0x00000000080029e4                pvPortMalloc
+                0x0000000008002d80      0x124 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+                0x0000000008002d80                pvPortMalloc
  .text.vPortFree
-                0x0000000008002b08       0x70 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
-                0x0000000008002b08                vPortFree
+                0x0000000008002ea4       0x70 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+                0x0000000008002ea4                vPortFree
  .text.prvPortStartFirstTask
-                0x0000000008002b78       0x28 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x0000000008002f14       0x28 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
  .text.vPortEnableVFP
-                0x0000000008002ba0       0x14 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x0000000008002f3c       0x14 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
  .text.prvTaskExitError
-                0x0000000008002bb4       0x40 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x0000000008002f50       0x40 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
  .text.pxPortInitialiseStack
-                0x0000000008002bf4       0x2c CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
-                0x0000000008002bf4                pxPortInitialiseStack
+                0x0000000008002f90       0x2c CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x0000000008002f90                pxPortInitialiseStack
+ *fill*         0x0000000008002fbc        0x4 
  .text.SVC_Handler
-                0x0000000008002c20       0x24 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
-                0x0000000008002c20                SVC_Handler
+                0x0000000008002fc0       0x24 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x0000000008002fc0                SVC_Handler
  .text.vPortEnterCritical
-                0x0000000008002c44       0x40 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
-                0x0000000008002c44                vPortEnterCritical
+                0x0000000008002fe4       0x40 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x0000000008002fe4                vPortEnterCritical
  .text.vPortExitCritical
-                0x0000000008002c84       0x28 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
-                0x0000000008002c84                vPortExitCritical
- *fill*         0x0000000008002cac        0x4 
+                0x0000000008003024       0x28 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x0000000008003024                vPortExitCritical
+ *fill*         0x000000000800304c        0x4 
  .text.PendSV_Handler
-                0x0000000008002cb0       0x64 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
-                0x0000000008002cb0                PendSV_Handler
+                0x0000000008003050       0x64 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x0000000008003050                PendSV_Handler
  .text.SysTick_Handler
-                0x0000000008002d14       0x2c CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
-                0x0000000008002d14                SysTick_Handler
+                0x00000000080030b4       0x2c CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x00000000080030b4                SysTick_Handler
  .text.vPortSetupTimerInterrupt
-                0x0000000008002d40       0x24 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
-                0x0000000008002d40                vPortSetupTimerInterrupt
+                0x00000000080030e0       0x24 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x00000000080030e0                vPortSetupTimerInterrupt
  .text.xPortStartScheduler
-                0x0000000008002d64      0x10c CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
-                0x0000000008002d64                xPortStartScheduler
+                0x0000000008003104      0x10c CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x0000000008003104                xPortStartScheduler
  .text.Reset_Handler
-                0x0000000008002e70       0x50 CMakeFiles/freeRTOSTest.dir/startup_stm32f303xe.s.obj
-                0x0000000008002e70                Reset_Handler
+                0x0000000008003210       0x50 CMakeFiles/freeRTOSTest.dir/startup_stm32f303xe.s.obj
+                0x0000000008003210                Reset_Handler
  .text.Default_Handler
-                0x0000000008002ec0        0x2 CMakeFiles/freeRTOSTest.dir/startup_stm32f303xe.s.obj
-                0x0000000008002ec0                RTC_Alarm_IRQHandler
-                0x0000000008002ec0                TIM8_TRG_COM_IRQHandler
-                0x0000000008002ec0                TIM8_CC_IRQHandler
-                0x0000000008002ec0                SPI4_IRQHandler
-                0x0000000008002ec0                TIM1_CC_IRQHandler
-                0x0000000008002ec0                USB_HP_IRQHandler
-                0x0000000008002ec0                PVD_IRQHandler
-                0x0000000008002ec0                TAMP_STAMP_IRQHandler
-                0x0000000008002ec0                EXTI3_IRQHandler
-                0x0000000008002ec0                I2C3_ER_IRQHandler
-                0x0000000008002ec0                USB_HP_CAN_TX_IRQHandler
-                0x0000000008002ec0                EXTI0_IRQHandler
-                0x0000000008002ec0                I2C2_EV_IRQHandler
-                0x0000000008002ec0                FPU_IRQHandler
-                0x0000000008002ec0                ADC1_2_IRQHandler
-                0x0000000008002ec0                SPI1_IRQHandler
-                0x0000000008002ec0                CAN_SCE_IRQHandler
-                0x0000000008002ec0                TIM6_DAC_IRQHandler
-                0x0000000008002ec0                TIM8_UP_IRQHandler
-                0x0000000008002ec0                DMA2_Channel2_IRQHandler
-                0x0000000008002ec0                DMA1_Channel4_IRQHandler
-                0x0000000008002ec0                TIM20_TRG_COM_IRQHandler
-                0x0000000008002ec0                USART3_IRQHandler
-                0x0000000008002ec0                DMA1_Channel7_IRQHandler
-                0x0000000008002ec0                UART5_IRQHandler
-                0x0000000008002ec0                ADC3_IRQHandler
-                0x0000000008002ec0                TIM4_IRQHandler
-                0x0000000008002ec0                CAN_RX1_IRQHandler
-                0x0000000008002ec0                DMA2_Channel1_IRQHandler
-                0x0000000008002ec0                I2C1_EV_IRQHandler
-                0x0000000008002ec0                DMA1_Channel6_IRQHandler
-                0x0000000008002ec0                UART4_IRQHandler
-                0x0000000008002ec0                DMA2_Channel4_IRQHandler
-                0x0000000008002ec0                TIM3_IRQHandler
-                0x0000000008002ec0                RCC_IRQHandler
-                0x0000000008002ec0                TIM20_UP_IRQHandler
-                0x0000000008002ec0                DMA1_Channel1_IRQHandler
-                0x0000000008002ec0                Default_Handler
-                0x0000000008002ec0                USBWakeUp_RMP_IRQHandler
-                0x0000000008002ec0                EXTI15_10_IRQHandler
-                0x0000000008002ec0                TIM7_IRQHandler
-                0x0000000008002ec0                I2C3_EV_IRQHandler
-                0x0000000008002ec0                EXTI9_5_IRQHandler
-                0x0000000008002ec0                RTC_WKUP_IRQHandler
-                0x0000000008002ec0                SPI2_IRQHandler
-                0x0000000008002ec0                USB_LP_CAN_RX0_IRQHandler
-                0x0000000008002ec0                DMA2_Channel5_IRQHandler
-                0x0000000008002ec0                DMA1_Channel5_IRQHandler
-                0x0000000008002ec0                USB_LP_IRQHandler
-                0x0000000008002ec0                EXTI4_IRQHandler
-                0x0000000008002ec0                TIM1_TRG_COM_TIM17_IRQHandler
-                0x0000000008002ec0                DMA1_Channel3_IRQHandler
-                0x0000000008002ec0                ADC4_IRQHandler
-                0x0000000008002ec0                WWDG_IRQHandler
-                0x0000000008002ec0                TIM2_IRQHandler
-                0x0000000008002ec0                COMP7_IRQHandler
-                0x0000000008002ec0                COMP1_2_3_IRQHandler
-                0x0000000008002ec0                EXTI1_IRQHandler
-                0x0000000008002ec0                USART2_IRQHandler
-                0x0000000008002ec0                COMP4_5_6_IRQHandler
-                0x0000000008002ec0                TIM20_BRK_IRQHandler
-                0x0000000008002ec0                I2C2_ER_IRQHandler
-                0x0000000008002ec0                DMA1_Channel2_IRQHandler
-                0x0000000008002ec0                TIM8_BRK_IRQHandler
-                0x0000000008002ec0                FLASH_IRQHandler
-                0x0000000008002ec0                TIM20_CC_IRQHandler
-                0x0000000008002ec0                USART1_IRQHandler
-                0x0000000008002ec0                SPI3_IRQHandler
-                0x0000000008002ec0                I2C1_ER_IRQHandler
-                0x0000000008002ec0                FMC_IRQHandler
-                0x0000000008002ec0                USBWakeUp_IRQHandler
-                0x0000000008002ec0                DMA2_Channel3_IRQHandler
-                0x0000000008002ec0                EXTI2_TSC_IRQHandler
-                0x0000000008002ec0                TIM1_BRK_TIM15_IRQHandler
+                0x0000000008003260        0x2 CMakeFiles/freeRTOSTest.dir/startup_stm32f303xe.s.obj
+                0x0000000008003260                RTC_Alarm_IRQHandler
+                0x0000000008003260                TIM8_TRG_COM_IRQHandler
+                0x0000000008003260                TIM8_CC_IRQHandler
+                0x0000000008003260                SPI4_IRQHandler
+                0x0000000008003260                TIM1_CC_IRQHandler
+                0x0000000008003260                USB_HP_IRQHandler
+                0x0000000008003260                PVD_IRQHandler
+                0x0000000008003260                TAMP_STAMP_IRQHandler
+                0x0000000008003260                EXTI3_IRQHandler
+                0x0000000008003260                I2C3_ER_IRQHandler
+                0x0000000008003260                USB_HP_CAN_TX_IRQHandler
+                0x0000000008003260                EXTI0_IRQHandler
+                0x0000000008003260                I2C2_EV_IRQHandler
+                0x0000000008003260                FPU_IRQHandler
+                0x0000000008003260                ADC1_2_IRQHandler
+                0x0000000008003260                SPI1_IRQHandler
+                0x0000000008003260                CAN_SCE_IRQHandler
+                0x0000000008003260                TIM6_DAC_IRQHandler
+                0x0000000008003260                TIM8_UP_IRQHandler
+                0x0000000008003260                DMA2_Channel2_IRQHandler
+                0x0000000008003260                DMA1_Channel4_IRQHandler
+                0x0000000008003260                TIM20_TRG_COM_IRQHandler
+                0x0000000008003260                USART3_IRQHandler
+                0x0000000008003260                DMA1_Channel7_IRQHandler
+                0x0000000008003260                UART5_IRQHandler
+                0x0000000008003260                ADC3_IRQHandler
+                0x0000000008003260                TIM4_IRQHandler
+                0x0000000008003260                CAN_RX1_IRQHandler
+                0x0000000008003260                DMA2_Channel1_IRQHandler
+                0x0000000008003260                I2C1_EV_IRQHandler
+                0x0000000008003260                DMA1_Channel6_IRQHandler
+                0x0000000008003260                UART4_IRQHandler
+                0x0000000008003260                DMA2_Channel4_IRQHandler
+                0x0000000008003260                TIM3_IRQHandler
+                0x0000000008003260                RCC_IRQHandler
+                0x0000000008003260                TIM20_UP_IRQHandler
+                0x0000000008003260                DMA1_Channel1_IRQHandler
+                0x0000000008003260                Default_Handler
+                0x0000000008003260                USBWakeUp_RMP_IRQHandler
+                0x0000000008003260                EXTI15_10_IRQHandler
+                0x0000000008003260                TIM7_IRQHandler
+                0x0000000008003260                I2C3_EV_IRQHandler
+                0x0000000008003260                EXTI9_5_IRQHandler
+                0x0000000008003260                RTC_WKUP_IRQHandler
+                0x0000000008003260                SPI2_IRQHandler
+                0x0000000008003260                USB_LP_CAN_RX0_IRQHandler
+                0x0000000008003260                DMA2_Channel5_IRQHandler
+                0x0000000008003260                DMA1_Channel5_IRQHandler
+                0x0000000008003260                USB_LP_IRQHandler
+                0x0000000008003260                EXTI4_IRQHandler
+                0x0000000008003260                TIM1_TRG_COM_TIM17_IRQHandler
+                0x0000000008003260                DMA1_Channel3_IRQHandler
+                0x0000000008003260                ADC4_IRQHandler
+                0x0000000008003260                WWDG_IRQHandler
+                0x0000000008003260                TIM2_IRQHandler
+                0x0000000008003260                COMP7_IRQHandler
+                0x0000000008003260                COMP1_2_3_IRQHandler
+                0x0000000008003260                EXTI1_IRQHandler
+                0x0000000008003260                USART2_IRQHandler
+                0x0000000008003260                COMP4_5_6_IRQHandler
+                0x0000000008003260                TIM20_BRK_IRQHandler
+                0x0000000008003260                I2C2_ER_IRQHandler
+                0x0000000008003260                DMA1_Channel2_IRQHandler
+                0x0000000008003260                TIM8_BRK_IRQHandler
+                0x0000000008003260                FLASH_IRQHandler
+                0x0000000008003260                TIM20_CC_IRQHandler
+                0x0000000008003260                USART1_IRQHandler
+                0x0000000008003260                SPI3_IRQHandler
+                0x0000000008003260                I2C1_ER_IRQHandler
+                0x0000000008003260                FMC_IRQHandler
+                0x0000000008003260                USBWakeUp_IRQHandler
+                0x0000000008003260                DMA2_Channel3_IRQHandler
+                0x0000000008003260                EXTI2_TSC_IRQHandler
+                0x0000000008003260                TIM1_BRK_TIM15_IRQHandler
  *(.glue_7)
- .glue_7        0x0000000008002ec2        0x0 linker stubs
+ .glue_7        0x0000000008003262        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0000000008002ec2        0x0 linker stubs
+ .glue_7t       0x0000000008003262        0x0 linker stubs
  *(.eh_frame)
- *fill*         0x0000000008002ec2        0x2 
- .eh_frame      0x0000000008002ec4        0x0 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ *fill*         0x0000000008003262        0x2 
+ .eh_frame      0x0000000008003264        0x0 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x0000000008002ec4        0x4 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x0000000008002ec4                _init
- .init          0x0000000008002ec8        0x8 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x0000000008003264        0x4 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x0000000008003264                _init
+ .init          0x0000000008003268        0x8 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x0000000008002ed0        0x4 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x0000000008002ed0                _fini
- .fini          0x0000000008002ed4        0x8 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
-                0x0000000008002edc                . = ALIGN (0x4)
-                0x0000000008002edc                _etext = .
+ .fini          0x0000000008003270        0x4 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x0000000008003270                _fini
+ .fini          0x0000000008003274        0x8 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x000000000800327c                . = ALIGN (0x4)
+                0x000000000800327c                _etext = .
 
-.vfp11_veneer   0x0000000008002edc        0x0
- .vfp11_veneer  0x0000000008002edc        0x0 linker stubs
+.vfp11_veneer   0x000000000800327c        0x0
+ .vfp11_veneer  0x000000000800327c        0x0 linker stubs
 
-.v4_bx          0x0000000008002edc        0x0
- .v4_bx         0x0000000008002edc        0x0 linker stubs
+.v4_bx          0x000000000800327c        0x0
+ .v4_bx         0x000000000800327c        0x0 linker stubs
 
-.iplt           0x0000000008002edc        0x0
- .iplt          0x0000000008002edc        0x0 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x000000000800327c        0x0
+ .iplt          0x000000000800327c        0x0 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x0000000008002edc      0x2dc
-                0x0000000008002edc                . = ALIGN (0x4)
+.rodata         0x000000000800327c      0x370
+                0x000000000800327c                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x0000000008002edc       0x1c CMakeFiles/freeRTOSTest.dir/Core/Src/main.c.obj
+ .rodata        0x000000000800327c       0x1c CMakeFiles/freeRTOSTest.dir/Core/Src/main.c.obj
  *(.rodata*)
  .rodata.str1.1
-                0x0000000008002ef8       0x52 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
- *fill*         0x0000000008002f4a        0x2 
- .rodata.os_thread_def_Task1Thread
-                0x0000000008002f4c       0x1c CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
-                0x0000000008002f4c                os_thread_def_Task1Thread
+                0x0000000008003298       0x60 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
+                                         0x82 (size before relaxing)
+ .rodata.os_thread_def_ForceSwitchHigh
+                0x00000000080032f8       0x1c CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
+                0x00000000080032f8                os_thread_def_ForceSwitchHigh
+ .rodata.os_thread_def_ForceSwitchLow
+                0x0000000008003314       0x1c CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
+                0x0000000008003314                os_thread_def_ForceSwitchLow
+ .rodata.os_thread_def_ForceSwitchNormal
+                0x0000000008003330       0x1c CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
+                0x0000000008003330                os_thread_def_ForceSwitchNormal
+ .rodata.os_thread_def_SwitchHigh
+                0x000000000800334c       0x1c CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
+                0x000000000800334c                os_thread_def_SwitchHigh
+ .rodata.os_thread_def_SwitchLow
+                0x0000000008003368       0x1c CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
+                0x0000000008003368                os_thread_def_SwitchLow
+ .rodata.os_thread_def_SwitchNormal
+                0x0000000008003384       0x1c CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
+                0x0000000008003384                os_thread_def_SwitchNormal
  .rodata.crc16_tab
-                0x0000000008002f68      0x200 CMakeFiles/freeRTOSTest.dir/Core/Src/frame_controller.c.obj
+                0x00000000080033a0      0x200 CMakeFiles/freeRTOSTest.dir/Core/Src/frame_controller.c.obj
  .rodata.str1.1
-                0x0000000008003168        0xf CMakeFiles/freeRTOSTest.dir/Core/Src/main.c.obj
+                0x00000000080035a0        0xb CMakeFiles/freeRTOSTest.dir/Core/Src/main.c.obj
  .rodata.aPLLMULFactorTable
-                0x0000000008003177       0x10 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
+                0x00000000080035ab       0x10 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
  .rodata.aPredivFactorTable
-                0x0000000008003187       0x10 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
+                0x00000000080035bb       0x10 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
  .rodata.CSWTCH.53
-                0x0000000008003197        0x3 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
+                0x00000000080035cb        0x3 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
  .rodata.AHBPrescTable
-                0x000000000800319a       0x10 CMakeFiles/freeRTOSTest.dir/Core/Src/system_stm32f3xx.c.obj
-                0x000000000800319a                AHBPrescTable
+                0x00000000080035ce       0x10 CMakeFiles/freeRTOSTest.dir/Core/Src/system_stm32f3xx.c.obj
+                0x00000000080035ce                AHBPrescTable
  .rodata.APBPrescTable
-                0x00000000080031aa        0x8 CMakeFiles/freeRTOSTest.dir/Core/Src/system_stm32f3xx.c.obj
-                0x00000000080031aa                APBPrescTable
+                0x00000000080035de        0x8 CMakeFiles/freeRTOSTest.dir/Core/Src/system_stm32f3xx.c.obj
+                0x00000000080035de                APBPrescTable
  .rodata.vTaskStartScheduler.str1.1
-                0x00000000080031b2        0x5 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x00000000080031b8                . = ALIGN (0x4)
- *fill*         0x00000000080031b7        0x1 
+                0x00000000080035e6        0x5 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x00000000080035ec                . = ALIGN (0x4)
+ *fill*         0x00000000080035eb        0x1 
 
-.rel.dyn        0x00000000080031b8        0x0
- .rel.iplt      0x00000000080031b8        0x0 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x00000000080035ec        0x0
+ .rel.iplt      0x00000000080035ec        0x0 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x00000000080031b8        0x0
-                0x00000000080031b8                __exidx_start = .
+.ARM            0x00000000080035ec        0x0
+                0x00000000080035ec                __exidx_start = .
  *(.ARM.exidx*)
-                0x00000000080031b8                __exidx_end = .
+                0x00000000080035ec                __exidx_end = .
 
-.preinit_array  0x00000000080031b8        0x0
-                0x00000000080031b8                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x00000000080035ec        0x0
+                0x00000000080035ec                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x00000000080031b8                PROVIDE (__preinit_array_end = .)
+                0x00000000080035ec                PROVIDE (__preinit_array_end = .)
 
-.init_array     0x00000000080031b8        0x4
-                0x00000000080031b8                PROVIDE (__init_array_start = .)
+.init_array     0x00000000080035ec        0x4
+                0x00000000080035ec                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x00000000080031b8        0x4 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x00000000080031bc                PROVIDE (__init_array_end = .)
+ .init_array    0x00000000080035ec        0x4 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x00000000080035f0                PROVIDE (__init_array_end = .)
 
-.fini_array     0x00000000080031bc        0x4
+.fini_array     0x00000000080035f0        0x4
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x00000000080031bc        0x4 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x00000000080035f0        0x4 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x00000000080031c0                _sidata = LOADADDR (.data)
+                0x00000000080035f4                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000       0x10 load address 0x00000000080031c0
+.data           0x0000000020000000       0x10 load address 0x00000000080035f4
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
@@ -2183,12 +2206,12 @@ LOAD /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/ar
                 0x000000002000000c        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
                 0x0000000020000010                . = ALIGN (0x4)
                 0x0000000020000010                _edata = .
-                0x00000000080031d0                _siccmram = LOADADDR (.ccmram)
+                0x0000000008003604                _siccmram = LOADADDR (.ccmram)
 
-.igot.plt       0x0000000020000010        0x0 load address 0x00000000080031d0
+.igot.plt       0x0000000020000010        0x0 load address 0x0000000008003604
  .igot.plt      0x0000000020000010        0x0 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.ccmram         0x0000000010000000        0x0 load address 0x00000000080031d0
+.ccmram         0x0000000010000000        0x0 load address 0x0000000008003604
                 0x0000000010000000                . = ALIGN (0x4)
                 0x0000000010000000                _sccmram = .
  *(.ccmram)
@@ -2197,7 +2220,7 @@ LOAD /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/ar
                 0x0000000010000000                _eccmram = .
                 0x0000000010000000                . = ALIGN (0x4)
 
-.bss            0x0000000020000010     0xd2b8
+.bss            0x0000000020000010     0xecb8
                 0x0000000020000010                _sbss = .
                 0x0000000020000010                __bss_start__ = _sbss
  *(.bss)
@@ -2218,83 +2241,83 @@ LOAD /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/ar
  .bss.values    0x0000000020000298     0x9c40 CMakeFiles/freeRTOSTest.dir/Core/Src/main.c.obj
                 0x0000000020000298                values
  .bss.xIdleStack
-                0x0000000020009ed8      0x200 CMakeFiles/freeRTOSTest.dir/Core/Src/freertos.c.obj
+                0x0000000020009ed8      0x100 CMakeFiles/freeRTOSTest.dir/Core/Src/freertos.c.obj
  .bss.xIdleTaskTCBBuffer
-                0x000000002000a0d8       0x58 CMakeFiles/freeRTOSTest.dir/Core/Src/freertos.c.obj
- .bss.htim1     0x000000002000a130       0x4c CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_hal_timebase_tim.c.obj
-                0x000000002000a130                htim1
- .bss.uwTick    0x000000002000a17c        0x4 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
-                0x000000002000a17c                uwTick
+                0x0000000020009fd8       0x58 CMakeFiles/freeRTOSTest.dir/Core/Src/freertos.c.obj
+ .bss.htim1     0x000000002000a030       0x4c CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_hal_timebase_tim.c.obj
+                0x000000002000a030                htim1
+ .bss.uwTick    0x000000002000a07c        0x4 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
+                0x000000002000a07c                uwTick
  .bss.pxCurrentTCB
-                0x000000002000a180        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x000000002000a180                pxCurrentTCB
+                0x000000002000a080        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x000000002000a080                pxCurrentTCB
  .bss.pxDelayedTaskList
-                0x000000002000a184        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x000000002000a084        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.pxOverflowDelayedTaskList
-                0x000000002000a188        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x000000002000a088        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.pxReadyTasksLists
-                0x000000002000a18c       0x8c CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x000000002000a08c       0x8c CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.uxCurrentNumberOfTasks
-                0x000000002000a218        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x000000002000a118        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.uxDeletedTasksWaitingCleanUp
-                0x000000002000a21c        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x000000002000a11c        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.uxPendedTicks
-                0x000000002000a220        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x000000002000a120        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.uxSchedulerSuspended
-                0x000000002000a224        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x000000002000a124        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.uxTaskNumber
-                0x000000002000a228        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x000000002000a128        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.uxTopReadyPriority
-                0x000000002000a22c        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x000000002000a12c        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.xDelayedTaskList1
-                0x000000002000a230       0x14 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x000000002000a130       0x14 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.xDelayedTaskList2
-                0x000000002000a244       0x14 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x000000002000a144       0x14 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.xNextTaskUnblockTime
-                0x000000002000a258        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x000000002000a158        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.xNumOfOverflows
-                0x000000002000a25c        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x000000002000a15c        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.xPendingReadyList
-                0x000000002000a260       0x14 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x000000002000a160       0x14 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.xSchedulerRunning
-                0x000000002000a274        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x000000002000a174        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.xSuspendedTaskList
-                0x000000002000a278       0x14 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x000000002000a178       0x14 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.xTasksWaitingTermination
-                0x000000002000a28c       0x14 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x000000002000a18c       0x14 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.xTickCount
-                0x000000002000a2a0        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x000000002000a1a0        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.xYieldPending
-                0x000000002000a2a4        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .bss.pxEnd     0x000000002000a2a8        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
- .bss.ucHeap    0x000000002000a2ac     0x3000 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+                0x000000002000a1a4        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+ .bss.pxEnd     0x000000002000a1a8        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+ .bss.ucHeap    0x000000002000a1ac     0x4b00 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
  .bss.xBlockAllocatedBit
-                0x000000002000d2ac        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+                0x000000002000ecac        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
  .bss.xFreeBytesRemaining
-                0x000000002000d2b0        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+                0x000000002000ecb0        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
  .bss.xMinimumEverFreeBytesRemaining
-                0x000000002000d2b4        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
- .bss.xStart    0x000000002000d2b8        0x8 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+                0x000000002000ecb4        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+ .bss.xStart    0x000000002000ecb8        0x8 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
  .bss.ucMaxSysCallPriority
-                0x000000002000d2c0        0x1 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
- *fill*         0x000000002000d2c1        0x3 
+                0x000000002000ecc0        0x1 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+ *fill*         0x000000002000ecc1        0x3 
  .bss.ulMaxPRIGROUPValue
-                0x000000002000d2c4        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x000000002000ecc4        0x4 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
  *(COMMON)
-                0x000000002000d2c8                . = ALIGN (0x4)
-                0x000000002000d2c8                _ebss = .
-                0x000000002000d2c8                __bss_end__ = _ebss
+                0x000000002000ecc8                . = ALIGN (0x4)
+                0x000000002000ecc8                _ebss = .
+                0x000000002000ecc8                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x000000002000d2c8      0x600
-                0x000000002000d2c8                . = ALIGN (0x8)
+                0x000000002000ecc8      0x600
+                0x000000002000ecc8                . = ALIGN (0x8)
                 [!provide]                        PROVIDE (end = .)
-                0x000000002000d2c8                PROVIDE (_end = .)
-                0x000000002000d4c8                . = (. + _Min_Heap_Size)
- *fill*         0x000000002000d2c8      0x200 
-                0x000000002000d8c8                . = (. + _Min_Stack_Size)
- *fill*         0x000000002000d4c8      0x400 
-                0x000000002000d8c8                . = ALIGN (0x8)
+                0x000000002000ecc8                PROVIDE (_end = .)
+                0x000000002000eec8                . = (. + _Min_Heap_Size)
+ *fill*         0x000000002000ecc8      0x200 
+                0x000000002000f2c8                . = (. + _Min_Stack_Size)
+ *fill*         0x000000002000eec8      0x400 
+                0x000000002000f2c8                . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -2313,53 +2336,55 @@ LOAD /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/ar
  .ARM.attributes
                 0x0000000000000086       0x34 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
  .ARM.attributes
-                0x00000000000000ba       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
+                0x00000000000000ba       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/force_switch_thread.c.obj
  .ARM.attributes
-                0x00000000000000ee       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/test1.c.obj
+                0x00000000000000ee       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
  .ARM.attributes
-                0x0000000000000122       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/frame_controller.c.obj
+                0x0000000000000122       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/switch_thread.c.obj
  .ARM.attributes
-                0x0000000000000156       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/main.c.obj
+                0x0000000000000156       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/frame_controller.c.obj
  .ARM.attributes
-                0x000000000000018a       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/freertos.c.obj
+                0x000000000000018a       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/main.c.obj
  .ARM.attributes
-                0x00000000000001be       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_it.c.obj
+                0x00000000000001be       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/freertos.c.obj
  .ARM.attributes
-                0x00000000000001f2       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_hal_msp.c.obj
+                0x00000000000001f2       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_it.c.obj
  .ARM.attributes
-                0x0000000000000226       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_hal_timebase_tim.c.obj
+                0x0000000000000226       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_hal_msp.c.obj
  .ARM.attributes
-                0x000000000000025a       0x34 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
+                0x000000000000025a       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/stm32f3xx_hal_timebase_tim.c.obj
  .ARM.attributes
-                0x000000000000028e       0x34 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
+                0x000000000000028e       0x34 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
  .ARM.attributes
-                0x00000000000002c2       0x34 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.c.obj
+                0x00000000000002c2       0x34 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
  .ARM.attributes
-                0x00000000000002f6       0x34 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c.obj
+                0x00000000000002f6       0x34 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.c.obj
  .ARM.attributes
-                0x000000000000032a       0x34 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
+                0x000000000000032a       0x34 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c.obj
  .ARM.attributes
-                0x000000000000035e       0x34 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
+                0x000000000000035e       0x34 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
  .ARM.attributes
-                0x0000000000000392       0x34 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.c.obj
+                0x0000000000000392       0x34 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c.obj
  .ARM.attributes
-                0x00000000000003c6       0x34 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
+                0x00000000000003c6       0x34 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.c.obj
  .ARM.attributes
-                0x00000000000003fa       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/system_stm32f3xx.c.obj
+                0x00000000000003fa       0x34 CMakeFiles/freeRTOSTest.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
  .ARM.attributes
-                0x000000000000042e       0x34 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+                0x000000000000042e       0x34 CMakeFiles/freeRTOSTest.dir/Core/Src/system_stm32f3xx.c.obj
  .ARM.attributes
-                0x0000000000000462       0x34 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x0000000000000462       0x34 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
  .ARM.attributes
-                0x0000000000000496       0x34 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
+                0x0000000000000496       0x34 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .ARM.attributes
-                0x00000000000004ca       0x34 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+                0x00000000000004ca       0x34 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj
  .ARM.attributes
-                0x00000000000004fe       0x34 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x00000000000004fe       0x34 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
  .ARM.attributes
-                0x0000000000000532       0x21 CMakeFiles/freeRTOSTest.dir/startup_stm32f303xe.s.obj
+                0x0000000000000532       0x34 CMakeFiles/freeRTOSTest.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
  .ARM.attributes
-                0x0000000000000553       0x1e /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x0000000000000566       0x21 CMakeFiles/freeRTOSTest.dir/startup_stm32f303xe.s.obj
+ .ARM.attributes
+                0x0000000000000587       0x1e /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
 OUTPUT(freeRTOSTest.elf elf32-littlearm)
 LOAD linker stubs
 LOAD /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a
@@ -2371,9 +2396,10 @@ LOAD /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/ar
  .debug_frame   0x000000000000002c       0x20 /home/krzysztof/toolchains/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
 
 .comment        0x0000000000000000       0x49
- .comment       0x0000000000000000       0x49 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
+ .comment       0x0000000000000000       0x49 CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/force_switch_thread.c.obj
                                          0x4a (size before relaxing)
- .comment       0x0000000000000049       0x4a CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/test1.c.obj
+ .comment       0x0000000000000049       0x4a CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/main_thread.c.obj
+ .comment       0x0000000000000049       0x4a CMakeFiles/freeRTOSTest.dir/Core/Src/test_threads/switch_thread.c.obj
  .comment       0x0000000000000049       0x4a CMakeFiles/freeRTOSTest.dir/Core/Src/frame_controller.c.obj
  .comment       0x0000000000000049       0x4a CMakeFiles/freeRTOSTest.dir/Core/Src/main.c.obj
  .comment       0x0000000000000049       0x4a CMakeFiles/freeRTOSTest.dir/Core/Src/freertos.c.obj

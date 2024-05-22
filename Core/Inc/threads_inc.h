@@ -13,14 +13,14 @@
 #define THREADS_INC_H_
 #include "cmsis_os.h"
 
-void mainTaskThread(void const *argument);
-void task1Thread(void const *argument);
-void task2Thread(void const *argument);
-void semaphoreTask1Thread(void const *argument);
-void semaphoreTask2Thread(void const *argument);
-void queueTaskThread(void const *argument);
-void contextTask1Thread(void const *argument);
-void contextTask2Thread(void const *argument);
+void mainThread(void const *argument);
+void forceSwitchThread(void const *argument);
+void forceSwitchPriorityThread(void const *argument);
+void switchThread(void const *argument);
+void switchPriorityThread(void const *argument);
+void semaphoreThread(void const *argument);
+void queueTransmitterThread(void const *argument);
+void queueRecieverThread(void const *argument);
 
 extern osSemaphoreId semaphoreHandle;
 extern osMessageQId queueHandle;

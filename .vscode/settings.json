@@ -9,8 +9,9 @@
         "typeinfo": "c",
         "features.h": "c",
         "time.h": "c",
-        "threads_inc.h": "c"
+        "threads_inc.h": "c",
+        "limits": "c"
     },
-    "cortex-debug.variableUseNaturalFormat": false,
+    "cortex-debug.variableUseNaturalFormat": true,
     "C_Cpp.default.configurationProvider": ""
 }

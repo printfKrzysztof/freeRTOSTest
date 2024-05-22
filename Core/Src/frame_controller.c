@@ -60,7 +60,7 @@ int DecodeCommandFrame(uint8_t *frame, uint8_t *command, uint8_t *arg_count, uin
 {
     if (frame[0] != 0xFF)
         return ERR_FRM_NO_START;
-    if (frame[1] > COMMAND_NO)
+    if (frame[1] > CMD_COMMAND_NO)
         return ERR_FRM_WRONG_COMMAND;
     if (frame[2] > MAX_ARGS_COMMAND_FRAME)
         return ERR_FRM_TOO_MANY_ARGS;

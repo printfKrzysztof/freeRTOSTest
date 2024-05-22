@@ -17,14 +17,21 @@
 // Threads definitions
 
 osThreadId tasks[MAX_THREADS];
+#define defalut_stack_size 64
 
-osThreadDef(Task1Thread, task1Thread, osPriorityNormal, 0, 128);
-osThreadDef(SemaphoreTask1, semaphoreTask1Thread, osPriorityNormal, 0, 128);
-osThreadDef(SemaphoreTask2, semaphoreTask2Thread, osPriorityNormal, 0, 128);
-osThreadDef(QueueTask, queueTaskThread, osPriorityNormal, 0, 128);
-osThreadDef(Context1Thread, contextTask1Thread, osPriorityHigh, 0, 128);
-osThreadDef(Context2Thread, contextTask2Thread, osPriorityLow, 0, 128);
+osThreadDef(ForceSwitchNormal, forceSwitchThread, osPriorityNormal, 0, defalut_stack_size);
+osThreadDef(ForceSwitchHigh, forceSwitchPriorityThread, osPriorityAboveNormal, 0, defalut_stack_size);
+osThreadDef(ForceSwitchLow, forceSwitchPriorityThread, osPriorityBelowNormal, 0, defalut_stack_size);
+
+osThreadDef(SwitchNormal, switchThread, osPriorityNormal, 0, defalut_stack_size);
+osThreadDef(SwitchHigh, switchPriorityThread, osPriorityAboveNormal, 0, defalut_stack_size);
+osThreadDef(SwitchLow, switchPriorityThread, osPriorityBelowNormal, 0, defalut_stack_size);
+
+osThreadDef(SemaphoreThread, semaphoreThread, osPriorityNormal, 0, defalut_stack_size);
 osSemaphoreDef(semaphore);
+
+osThreadDef(QueueTransmitter, queueTransmitterThread, osPriorityNormal, 0, 128);
+osThreadDef(QueueReciever, queueRecieverThread, osPriorityNormal, 0, 128);
 osMessageQDef(queue, 16, uint32_t);
 
 void resetValues(uint8_t *buffer_tx, uint8_t *buffer_rx)
@@ -50,7 +57,7 @@ void resetValues(uint8_t *buffer_tx, uint8_t *buffer_rx)
     }
 }
 
-void mainTaskThread(void const *argument)
+void mainThread(void const *argument)
 {
 
     (void)(argument);
@@ -68,7 +75,7 @@ void mainTaskThread(void const *argument)
             {
                 switch (command)
                 {
-                case TASK_SWITCH:
+                case CMD_TASK_FORCE_SWITCH:
 
                 {
                     resetValues(buffer_tx, buffer_rx); // Reseting all values
@@ -81,7 +88,7 @@ void mainTaskThread(void const *argument)
                     {
                         task_args[i][0] = i;
                         task_args[i][1] = args[1];
-                        tasks[i] = osThreadCreate(osThread(Task1Thread), task_args[i]);
+                        tasks[i] = osThreadCreate(osThread(ForceSwitchNormal), task_args[i]);
                     }
 
                     HAL_TIM_Base_Start(&htim2);
@@ -97,7 +104,7 @@ void mainTaskThread(void const *argument)
 
                     for (size_t i = 0; i < args[0]; i++) // For each task
                     {
-                        if (CodeScoreFrame(buffer_tx, TASK_SWITCH, (uint16_t)(args[1] * 4), (uint8_t *)(values[i])) == 0)
+                        if (CodeScoreFrame(buffer_tx, CMD_TASK_FORCE_SWITCH, (uint16_t)(args[1] * 4), (uint8_t *)(values[i])) == 0)
                         {
                             HAL_UART_Transmit(&huart2, buffer_tx, SCORE_FRAME_SIZE, 1000);
                         }
@@ -106,24 +113,138 @@ void mainTaskThread(void const *argument)
                 }
                 break;
 
-                case SEMAPHORE_TIME:
+                case CMD_TASK_FORCE_SWITCH_PRIORITY:
+
+                {
+                    resetValues(buffer_tx, buffer_rx); // Reseting all values
+
+                    // Argument 1 - Number of threads Low
+                    // Argument 2 - Number of threads High
+                    // Argument 3 - Number of measurements per task
+                    uint8_t task_count_sum = args[0] + args[1];
+                    uint8_t task_args[task_count_sum][2];
+                    for (size_t i = 0; i < task_count_sum; i++)
+                    {
+                        task_args[i][0] = i;
+                        task_args[i][1] = args[2];
+                        if (i < args[0])
+                            tasks[i] = osThreadCreate(osThread(ForceSwitchLow), task_args[i]);
+                        else
+                            tasks[i] = osThreadCreate(osThread(ForceSwitchHigh), task_args[i]);
+                    }
+
+                    HAL_TIM_Base_Start(&htim2);
+                    start_flag = 1;
+                    osDelay(10); // 10 milisecond block for main task
+
+                    HAL_TIM_Base_Stop(&htim2);
+
+                    for (size_t i = 0; i < task_count_sum; i++) // For each task
+                    {
+                        osThreadTerminate(tasks[i]);
+                    }
+
+                    for (size_t i = 0; i < task_count_sum; i++) // For each task
+                    {
+                        if (CodeScoreFrame(buffer_tx, CMD_TASK_FORCE_SWITCH_PRIORITY, (uint16_t)(args[2] * 4), (uint8_t *)(values[i])) == 0)
+                        {
+                            HAL_UART_Transmit(&huart2, buffer_tx, SCORE_FRAME_SIZE, 1000);
+                        }
+                        // osDelay(10);
+                    }
+                }
+                break;
+
+                case CMD_TASK_SWITCH:
+                {
+                    resetValues(buffer_tx, buffer_rx); // Reseting all values
+
+                    // Argument 1 - Number of threads
+                    // Argument 2 - Number of measurements per task
+
+                    uint8_t task_args[args[0]][2];
+                    for (size_t i = 0; i < args[0]; i++)
+                    {
+                        task_args[i][0] = i;
+                        task_args[i][1] = args[1];
+                        tasks[i] = osThreadCreate(osThread(SwitchNormal), task_args[i]);
+                    }
+
+                    HAL_TIM_Base_Start(&htim2);
+                    start_flag = 1;
+                    osDelay(1000); // 10 milisecond block for main task
+
+                    HAL_TIM_Base_Stop(&htim2);
+
+                    for (size_t i = 0; i < args[0]; i++) // For each task
+                    {
+                        osThreadTerminate(tasks[i]);
+                    }
+
+                    for (size_t i = 0; i < args[0]; i++) // For each task
+                    {
+                        if (CodeScoreFrame(buffer_tx, CMD_TASK_SWITCH, (uint16_t)(args[1] * 4), (uint8_t *)(values[i])) == 0)
+                        {
+                            HAL_UART_Transmit(&huart2, buffer_tx, SCORE_FRAME_SIZE, 1000);
+                        }
+                        // osDelay(10);
+                    }
+                }
+                break;
+
+                case CMD_TASK_SWITCH_PRIORITY:
+                {
+                    resetValues(buffer_tx, buffer_rx); // Reseting all values
+
+                    // Argument 1 - Number of threads Low
+                    // Argument 2 - Number of threads High
+                    // Argument 3 - Number of measurements per task
+                    uint8_t task_count_sum = args[0] + args[1];
+                    uint8_t task_args[task_count_sum][2];
+                    for (size_t i = 0; i < task_count_sum; i++)
+                    {
+                        task_args[i][0] = i;
+                        task_args[i][1] = args[2];
+                        if (i < args[0])
+                            tasks[i] = osThreadCreate(osThread(SwitchLow), task_args[i]);
+                        else
+                            tasks[i] = osThreadCreate(osThread(SwitchHigh), task_args[i]);
+                    }
+
+                    HAL_TIM_Base_Start(&htim2);
+                    start_flag = 1;
+                    osDelay(1000); // 10 milisecond block for main task
+
+                    HAL_TIM_Base_Stop(&htim2);
+
+                    for (size_t i = 0; i < task_count_sum; i++) // For each task
+                    {
+                        osThreadTerminate(tasks[i]);
+                    }
+
+                    for (size_t i = 0; i < task_count_sum; i++) // For each task
+                    {
+                        if (CodeScoreFrame(buffer_tx, CMD_TASK_SWITCH_PRIORITY, (uint16_t)(args[2] * 4), (uint8_t *)(values[i])) == 0)
+                        {
+                            HAL_UART_Transmit(&huart2, buffer_tx, SCORE_FRAME_SIZE, 1000);
+                        }
+                        // osDelay(10);
+                    }
+                }
+                break;
+                case CMD_SEMAPHORE:
                 {
                 }
                 break;
 
-                case QUEUE_TIME:
+                case CMD_QUEUE:
                 {
                 }
                 break;
 
-                case CONTEXT_SWITCH: // From higher to Lower
+                case CMD_COMMAND_NO:
                 {
-                }
-                break;
-
-                case COMMAND_NO:
-                {
-                    if (CodeScoreFrame(buffer_tx, COMMAND_NO, 0, args) == 0)
+                    if (CodeScoreFrame(buffer_tx, CMD_COMMAND_NO, 0, args) == 0)
                         HAL_UART_Transmit(&huart2, buffer_tx, 10, 100);
                 }
                 break;
