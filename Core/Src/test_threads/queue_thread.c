@@ -12,23 +12,57 @@
 #include "threads_inc.h"
 #include "main.h"
 
-void queueTaskThread(void const *argument)
+void queueTransmitterThread(void const *argument)
 {
-    (void)(argument);
+
+    const int max = ((uint8_t *)argument)[0]; // Number of measurements per task
+    while (!start_flag)
+    {
+        osThreadYield(); // Forcing task switch so lower priority has a chance to take context
+    }
     osEvent evt;
     int i = 0;
     while (1)
     {
-        osMessagePut(queueHandle, __HAL_TIM_GetCounter(&htim2), osWaitForever);
+        values[0][i] = __HAL_TIM_GetCounter(&htim2);
+        osMessagePut(queueHandle, values[0][i++], osWaitForever);
+        osThreadYield();
+        if (i >= max)
+            break;
+    }
+
+    while (1)
+    {
+        osDelay(10); // Forcing delay so that main_thread has a chance to take context
+    }
+}
+
+void queueRecieverThread(void const *argument)
+{
+    const int max = ((uint8_t *)argument)[0]; // Number of measurements per task
+    while (!start_flag)
+    {
+        osThreadYield(); // Forcing task switch so lower priority has a chance to take context
+    }
+    osEvent evt;
+    int i = 0;
+    while (1)
+    {
 
         // Wait for a message from the queue
         evt = osMessageGet(queueHandle, osWaitForever);
-        if (evt.status == osEventMessage && i < 10)
+        if ((evt.status == osEventMessage) && (evt.value.v == values[0][i]))
         {
-            // Calculate the queue time
-            values[0][i] = __HAL_TIM_GetCounter(&htim2) - evt.value.v;
+            values[1][i++] = __HAL_TIM_GetCounter(&htim2);
         }
+        osThreadYield();
 
-        i++;
+        if (i >= max)
+            break;
+    }
+
+    while (1)
+    {
+        osDelay(10); // Forcing delay so that main_thread has a chance to take context
     }
 }

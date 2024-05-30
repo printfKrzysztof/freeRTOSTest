@@ -28,11 +28,11 @@ osThreadDef(SwitchHigh, switchPriorityThread, osPriorityAboveNormal, 0, defalut_
 osThreadDef(SwitchLow, switchPriorityThread, osPriorityBelowNormal, 0, defalut_stack_size);
 
 osThreadDef(SemaphoreThread, semaphoreThread, osPriorityNormal, 0, defalut_stack_size);
-osSemaphoreDef(semaphore);
+osSemaphoreDef(Semaphore);
 
 osThreadDef(QueueTransmitter, queueTransmitterThread, osPriorityNormal, 0, 128);
 osThreadDef(QueueReciever, queueRecieverThread, osPriorityNormal, 0, 128);
-osMessageQDef(queue, 16, uint32_t);
+osMessageQDef(Queue, 16, uint32_t);
 
 void resetValues(uint8_t *buffer_tx, uint8_t *buffer_rx)
 {
@@ -232,13 +232,79 @@ void mainThread(void const *argument)
                     }
                 }
                 break;
+
                 case CMD_SEMAPHORE:
                 {
+                    resetValues(buffer_tx, buffer_rx); // Reseting all values
+
+                    // Argument 1 - Number of threads
+                    // Argument 2 - Number of measurements per task
+
+                    uint8_t task_args[args[0]][2];
+                    semaphoreHandle = osSemaphoreCreate(&os_semaphore_def_Semaphore, 1); // Creating bionary semaphore (mutex)
+                    for (size_t i = 0; i < args[0]; i++)
+                    {
+                        task_args[i][0] = i;
+                        task_args[i][1] = args[1];
+                        tasks[i] = osThreadCreate(osThread(SemaphoreThread), task_args[i]);
+                    }
+
+                    HAL_TIM_Base_Start(&htim2);
+                    start_flag = 1;
+                    osDelay(10); // 10 milisecond block for main task
+
+                    HAL_TIM_Base_Stop(&htim2);
+
+                    for (size_t i = 0; i < args[0]; i++) // For each task
+                    {
+                        osThreadTerminate(tasks[i]);
+                    }
+
+                    osSemaphoreDelete(semaphoreHandle);
+
+                    for (size_t i = 0; i < args[0]; i++) // For each task
+                    {
+                        if (CodeScoreFrame(buffer_tx, CMD_SEMAPHORE, (uint16_t)(args[1] * 4), (uint8_t *)(values[i])) == 0)
+                        {
+                            HAL_UART_Transmit(&huart2, buffer_tx, SCORE_FRAME_SIZE, 1000);
+                        }
+                        // osDelay(10);
+                    }
                 }
                 break;
 
                 case CMD_QUEUE:
                 {
+                    resetValues(buffer_tx, buffer_rx); // Reseting all values
+
+                    // Argument 1 - Number of measurements per task
+
+                    queueHandle = osMessageCreate(&os_messageQ_def_Queue, NULL); // Creating bionary semaphore (mutex)
+
+                    tasks[0] = osThreadCreate(osThread(QueueTransmitter), args);
+                    tasks[1] = osThreadCreate(osThread(QueueReciever), args);
+
+                    HAL_TIM_Base_Start(&htim2);
+                    start_flag = 1;
+                    osDelay(10); // 10 milisecond block for main task
+
+                    HAL_TIM_Base_Stop(&htim2);
+
+                    for (size_t i = 0; i < 2; i++) // For each task
+                    {
+                        osThreadTerminate(tasks[i]);
+                    }
+
+                    osMessageDelete(queueHandle);
+
+                    for (size_t i = 0; i < 2; i++) // For each task
+                    {
+                        if (CodeScoreFrame(buffer_tx, CMD_QUEUE, (uint16_t)(args[0] * 4), (uint8_t *)(values[i])) == 0)
+                        {
+                            HAL_UART_Transmit(&huart2, buffer_tx, SCORE_FRAME_SIZE, 1000);
+                        }
+                        // osDelay(10);
+                    }
                 }
                 break;
 

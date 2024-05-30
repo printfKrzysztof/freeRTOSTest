@@ -12,7 +12,7 @@
 #include "cmsis_os.h"
 #include "threads_inc.h"
 
-// #define TESTING 1
+// #define TESTING_BARE_METAL 1
 
 // Externs
 osSemaphoreId semaphoreHandle;
@@ -55,7 +55,7 @@ int main(void)
 
   HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
 
-#ifdef TESTING
+#ifdef TESTING_BARE_METAL
 
   __HAL_TIM_SET_COUNTER(&htim2, 0);
 
@@ -63,6 +63,12 @@ int main(void)
   uint32_t time[101];
   HAL_TIM_Base_Start(&htim2);
   // First ten is to check how much does read take
+
+  time[i++] = __HAL_TIM_GetCounter(&htim2);
+  time[i++] = __HAL_TIM_GetCounter(&htim2);
+  time[i++] = __HAL_TIM_GetCounter(&htim2);
+  time[i++] = __HAL_TIM_GetCounter(&htim2);
+  time[i++] = __HAL_TIM_GetCounter(&htim2);
 
   while (1)
   {
@@ -86,11 +92,11 @@ int main(void)
   osThreadDef(MainThread, mainThread, osPriorityNormal, 0, 256);
   defaultTaskHandle = osThreadCreate(osThread(MainThread), NULL);
   osKernelStart();
-#endif // TESTING
+#endif // TESTING_BARE_METAL
 
   while (1)
   {
-    // Only if testing
+    // Only if TESTING_BARE_METAL
   }
 }
 
