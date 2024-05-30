@@ -241,7 +241,7 @@ void mainThread(void const *argument)
                     // Argument 2 - Number of measurements per task
 
                     uint8_t task_args[args[0]][2];
-                    semaphoreHandle = osSemaphoreCreate(&os_semaphore_def_Semaphore, 1); // Creating bionary semaphore (mutex)
+                    semaphoreHandle = osSemaphoreCreate(osSemaphore(Semaphore), 1); // Creating bionary semaphore (mutex)
                     for (size_t i = 0; i < args[0]; i++)
                     {
                         task_args[i][0] = i;
@@ -279,7 +279,7 @@ void mainThread(void const *argument)
 
                     // Argument 1 - Number of measurements per task
 
-                    queueHandle = osMessageCreate(&os_messageQ_def_Queue, NULL); // Creating bionary semaphore (mutex)
+                    queueHandle = osMessageCreate(osMessageQ(Queue), NULL); // Creating bionary semaphore (mutex)
 
                     tasks[0] = osThreadCreate(osThread(QueueTransmitter), args);
                     tasks[1] = osThreadCreate(osThread(QueueReciever), args);

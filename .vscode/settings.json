@@ -10,7 +10,8 @@
         "features.h": "c",
         "time.h": "c",
         "threads_inc.h": "c",
-        "limits": "c"
+        "limits": "c",
+        "stm32f3xx_hal_conf.h": "c"
     },
     "cortex-debug.variableUseNaturalFormat": true,
     "C_Cpp.default.configurationProvider": ""
