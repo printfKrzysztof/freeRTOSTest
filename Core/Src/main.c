@@ -89,7 +89,7 @@ int main(void)
   }
 
 #else
-  osThreadDef(MainThread, mainThread, osPriorityNormal, 0, 256);
+  osThreadDef(MainThread, mainThread, osPriorityNormal, 0, 1024);
   defaultTaskHandle = osThreadCreate(osThread(MainThread), NULL);
   osKernelStart();
 #endif // TESTING_BARE_METAL

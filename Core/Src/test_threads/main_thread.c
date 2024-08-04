@@ -93,7 +93,7 @@ void mainThread(void const *argument)
 
                     HAL_TIM_Base_Start(&htim2);
                     start_flag = 1;
-                    osDelay(10); // 10 milisecond block for main task
+                    osDelay(1000); // 10 milisecond block for main task
 
                     HAL_TIM_Base_Stop(&htim2);
 
@@ -135,7 +135,7 @@ void mainThread(void const *argument)
 
                     HAL_TIM_Base_Start(&htim2);
                     start_flag = 1;
-                    osDelay(10); // 10 milisecond block for main task
+                    osDelay(1000); // 10 milisecond block for main task
 
                     HAL_TIM_Base_Stop(&htim2);
 
@@ -172,7 +172,7 @@ void mainThread(void const *argument)
 
                     HAL_TIM_Base_Start(&htim2);
                     start_flag = 1;
-                    osDelay(1000); // 10 milisecond block for main task
+                    osDelay(5000); // 10 milisecond block for main task
 
                     HAL_TIM_Base_Stop(&htim2);
 
@@ -213,7 +213,7 @@ void mainThread(void const *argument)
 
                     HAL_TIM_Base_Start(&htim2);
                     start_flag = 1;
-                    osDelay(1000); // 10 milisecond block for main task
+                    osDelay(5000); // 10 milisecond block for main task
 
                     HAL_TIM_Base_Stop(&htim2);
 
@@ -251,7 +251,7 @@ void mainThread(void const *argument)
 
                     HAL_TIM_Base_Start(&htim2);
                     start_flag = 1;
-                    osDelay(10); // 10 milisecond block for main task
+                    osDelay(1000); // 10 milisecond block for main task
 
                     HAL_TIM_Base_Stop(&htim2);
 
@@ -286,7 +286,7 @@ void mainThread(void const *argument)
 
                     HAL_TIM_Base_Start(&htim2);
                     start_flag = 1;
-                    osDelay(10); // 10 milisecond block for main task
+                    osDelay(1000); // 10 milisecond block for main task
 
                     HAL_TIM_Base_Stop(&htim2);
 
