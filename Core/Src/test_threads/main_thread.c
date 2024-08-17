@@ -28,11 +28,11 @@ osThreadDef(SwitchHigh, switchPriorityThread, osPriorityAboveNormal, 0, defalut_
 osThreadDef(SwitchLow, switchPriorityThread, osPriorityBelowNormal, 0, defalut_stack_size);
 
 osThreadDef(SemaphoreThread, semaphoreThread, osPriorityNormal, 0, defalut_stack_size);
-osSemaphoreDef(Semaphore);
+osMutexDef(Mutex);
 
 osThreadDef(QueueTransmitter, queueTransmitterThread, osPriorityNormal, 0, 128);
 osThreadDef(QueueReciever, queueRecieverThread, osPriorityNormal, 0, 128);
-osMessageQDef(Queue, 16, uint32_t);
+osMessageQDef(Queue, 1, uint32_t);
 
 void resetValues(uint8_t *buffer_tx, uint8_t *buffer_rx)
 {
@@ -241,7 +241,7 @@ void mainThread(void const *argument)
                     // Argument 2 - Number of measurements per task
 
                     uint8_t task_args[args[0]][2];
-                    semaphoreHandle = osSemaphoreCreate(osSemaphore(Semaphore), 1); // Creating bionary semaphore (mutex)
+                    mutexHandle = osMutexCreate(osMutex(Mutex)); // Creating bionary semaphore (mutex)
                     for (size_t i = 0; i < args[0]; i++)
                     {
                         task_args[i][0] = i;
@@ -260,7 +260,7 @@ void mainThread(void const *argument)
                         osThreadTerminate(tasks[i]);
                     }
 
-                    osSemaphoreDelete(semaphoreHandle);
+                    osSemaphoreDelete(mutexHandle);
 
                     for (size_t i = 0; i < args[0]; i++) // For each task
                     {

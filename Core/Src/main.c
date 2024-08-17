@@ -15,7 +15,7 @@
 // #define TESTING_BARE_METAL 1
 
 // Externs
-osSemaphoreId semaphoreHandle;
+osMutexId mutexHandle;
 uint32_t values[MAX_THREADS][MAX_TEST_PER_THREAD];
 int start_flag;
 osThreadId defaultTaskHandle;

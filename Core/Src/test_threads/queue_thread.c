@@ -35,7 +35,7 @@ void queueTransmitterThread(void const *argument)
 
     while (1)
     {
-        osDelay(10); // Forcing delay so that main_thread has a chance to take context
+        osDelay(10000); // Forcing delay so that main_thread has a chance to take context
     }
 }
 
@@ -69,6 +69,6 @@ void queueRecieverThread(void const *argument)
 
     while (1)
     {
-        osDelay(10); // Forcing delay so that main_thread has a chance to take context
+        osDelay(10000); // Forcing delay so that main_thread has a chance to take context
     }
 }

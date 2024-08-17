@@ -16,20 +16,19 @@ void semaphoreThread(void const *argument)
 {
     const uint8_t data = ((uint8_t *)argument)[0]; // Task number
     const int max = ((uint8_t *)argument)[1];      // Number of measurements per task
+    int i = 0;
+
     while (!start_flag)
     {
         osThreadYield(); // Forcing task switch so lower priority has a chance to take context
     }
 
-    int i = 0;
     while (1)
     {
-        osSemaphoreWait(semaphoreHandle, osWaitForever);
-        values[data][i++] = __HAL_TIM_GetCounter(&htim2);
+        osMutexWait(mutexHandle, osWaitForever);
         osThreadYield(); // Forcing task switch
-
-        osSemaphoreRelease(semaphoreHandle);
         values[data][i++] = __HAL_TIM_GetCounter(&htim2);
+        osMutexRelease(mutexHandle);
         osThreadYield(); // Forcing task switch
 
         if (i == max)
@@ -38,6 +37,6 @@ void semaphoreThread(void const *argument)
 
     while (1)
     {
-        osDelay(10); // Forcing delay so that main_thread has a chance to take context
+        osDelay(10000); // Forcing delay so that main_thread has a chance to take context
     }
 }
