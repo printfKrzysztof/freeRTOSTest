@@ -17,21 +17,16 @@
 // Threads definitions
 
 osThreadId tasks[MAX_THREADS];
-#define defalut_stack_size 64
+#define defalut_stack_size 128
 
 osThreadDef(ForceSwitchNormal, forceSwitchThread, osPriorityNormal, 0, defalut_stack_size);
-osThreadDef(ForceSwitchHigh, forceSwitchPriorityThread, osPriorityAboveNormal, 0, defalut_stack_size);
-osThreadDef(ForceSwitchLow, forceSwitchPriorityThread, osPriorityBelowNormal, 0, defalut_stack_size);
-
 osThreadDef(SwitchNormal, switchThread, osPriorityNormal, 0, defalut_stack_size);
-osThreadDef(SwitchHigh, switchPriorityThread, osPriorityAboveNormal, 0, defalut_stack_size);
-osThreadDef(SwitchLow, switchPriorityThread, osPriorityBelowNormal, 0, defalut_stack_size);
 
 osThreadDef(SemaphoreThread, semaphoreThread, osPriorityNormal, 0, defalut_stack_size);
 osMutexDef(Mutex);
 
-osThreadDef(QueueTransmitter, queueTransmitterThread, osPriorityNormal, 0, 128);
-osThreadDef(QueueReciever, queueRecieverThread, osPriorityNormal, 0, 128);
+osThreadDef(QueueTransmitter, queueTransmitterThread, osPriorityNormal, 0, defalut_stack_size);
+osThreadDef(QueueReciever, queueRecieverThread, osPriorityNormal, 0, defalut_stack_size);
 osMessageQDef(Queue, 1, uint32_t);
 
 void resetValues(uint8_t *buffer_tx, uint8_t *buffer_rx)
@@ -113,48 +108,6 @@ void mainThread(void const *argument)
                 }
                 break;
 
-                case CMD_TASK_FORCE_SWITCH_PRIORITY:
-
-                {
-                    resetValues(buffer_tx, buffer_rx); // Reseting all values
-
-                    // Argument 1 - Number of threads Low
-                    // Argument 2 - Number of threads High
-                    // Argument 3 - Number of measurements per task
-                    uint8_t task_count_sum = args[0] + args[1];
-                    uint8_t task_args[task_count_sum][2];
-                    for (size_t i = 0; i < task_count_sum; i++)
-                    {
-                        task_args[i][0] = i;
-                        task_args[i][1] = args[2];
-                        if (i < args[0])
-                            tasks[i] = osThreadCreate(osThread(ForceSwitchLow), task_args[i]);
-                        else
-                            tasks[i] = osThreadCreate(osThread(ForceSwitchHigh), task_args[i]);
-                    }
-
-                    HAL_TIM_Base_Start(&htim2);
-                    start_flag = 1;
-                    osDelay(1000); // 10 milisecond block for main task
-
-                    HAL_TIM_Base_Stop(&htim2);
-
-                    for (size_t i = 0; i < task_count_sum; i++) // For each task
-                    {
-                        osThreadTerminate(tasks[i]);
-                    }
-
-                    for (size_t i = 0; i < task_count_sum; i++) // For each task
-                    {
-                        if (CodeScoreFrame(buffer_tx, CMD_TASK_FORCE_SWITCH_PRIORITY, (uint16_t)(args[2] * 4), (uint8_t *)(values[i])) == 0)
-                        {
-                            HAL_UART_Transmit(&huart2, buffer_tx, SCORE_FRAME_SIZE, 1000);
-                        }
-                        // osDelay(10);
-                    }
-                }
-                break;
-
                 case CMD_TASK_SWITCH:
                 {
                     resetValues(buffer_tx, buffer_rx); // Reseting all values
@@ -184,47 +137,6 @@ void mainThread(void const *argument)
                     for (size_t i = 0; i < args[0]; i++) // For each task
                     {
                         if (CodeScoreFrame(buffer_tx, CMD_TASK_SWITCH, (uint16_t)(args[1] * 4), (uint8_t *)(values[i])) == 0)
-                        {
-                            HAL_UART_Transmit(&huart2, buffer_tx, SCORE_FRAME_SIZE, 1000);
-                        }
-                        // osDelay(10);
-                    }
-                }
-                break;
-
-                case CMD_TASK_SWITCH_PRIORITY:
-                {
-                    resetValues(buffer_tx, buffer_rx); // Reseting all values
-
-                    // Argument 1 - Number of threads Low
-                    // Argument 2 - Number of threads High
-                    // Argument 3 - Number of measurements per task
-                    uint8_t task_count_sum = args[0] + args[1];
-                    uint8_t task_args[task_count_sum][2];
-                    for (size_t i = 0; i < task_count_sum; i++)
-                    {
-                        task_args[i][0] = i;
-                        task_args[i][1] = args[2];
-                        if (i < args[0])
-                            tasks[i] = osThreadCreate(osThread(SwitchLow), task_args[i]);
-                        else
-                            tasks[i] = osThreadCreate(osThread(SwitchHigh), task_args[i]);
-                    }
-
-                    HAL_TIM_Base_Start(&htim2);
-                    start_flag = 1;
-                    osDelay(5000); // 10 milisecond block for main task
-
-                    HAL_TIM_Base_Stop(&htim2);
-
-                    for (size_t i = 0; i < task_count_sum; i++) // For each task
-                    {
-                        osThreadTerminate(tasks[i]);
-                    }
-
-                    for (size_t i = 0; i < task_count_sum; i++) // For each task
-                    {
-                        if (CodeScoreFrame(buffer_tx, CMD_TASK_SWITCH_PRIORITY, (uint16_t)(args[2] * 4), (uint8_t *)(values[i])) == 0)
                         {
                             HAL_UART_Transmit(&huart2, buffer_tx, SCORE_FRAME_SIZE, 1000);
                         }

@@ -30,7 +30,7 @@ static void MX_TIM2_Init(void);
 
 void intToAscii(uint32_t num, char *buffer)
 {
-  sprintf(buffer, "%02d", num);
+  sprintf(buffer, "%d", num);
 }
 
 /**
@@ -60,7 +60,7 @@ int main(void)
   __HAL_TIM_SET_COUNTER(&htim2, 0);
 
   int i = 0;
-  uint32_t time[101];
+  uint32_t time[120];
   HAL_TIM_Base_Start(&htim2);
   // First ten is to check how much does read take
 
@@ -77,14 +77,23 @@ int main(void)
       break;
   }
 
-  time[i++] = __HAL_TIM_GetCounter(&htim2);
+  // for (int x = 0; x < 5; x++)
+  // {
+  //   time[i++] = __HAL_TIM_GetCounter(&htim2);
+  //   for (int j = 0; j < 12000; j++)
+  //   {
+  //     asm volatile("nop");
+  //   }
+  //   time[i++] = __HAL_TIM_GetCounter(&htim2);
+  // }
+
   HAL_TIM_Base_Stop(&htim2);
 
-  char text[2];
+  char text[10];
   for (int j = 0; j < i - 1; j++)
   {
     intToAscii(time[j + 1] - time[j], text);
-    HAL_UART_Transmit(&huart2, (uint8_t *)text, 2, 100);
+    HAL_UART_Transmit(&huart2, (uint8_t *)text, sizeof(text), 100);
     HAL_UART_Transmit(&huart2, " ", 1, 100);
   }
 
