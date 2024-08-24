@@ -26,8 +26,8 @@ void semaphoreThread(void const *argument)
     while (1)
     {
         osMutexWait(mutexHandle, osWaitForever);
-        osThreadYield(); // Forcing task switch
         values[data][i++] = __HAL_TIM_GetCounter(&htim2);
+        osThreadYield(); // Forcing task switch
         osMutexRelease(mutexHandle);
         osThreadYield(); // Forcing task switch
 
